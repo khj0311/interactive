@@ -12,23 +12,20 @@
   <div class="component">
     <div class="tab tab--basic">
       <!-- Tab links -->
+      <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
       <div class="tab-list">
-        <button class="tab-item">London</button>
-        <button class="tab-item">Paris</button>
-        <button class="tab-item">Tokyo</button>
+        <% data.items.forEach(item => { %>
+        <button class="tab-item"><%- item.title %></button>
+        <% }) %>
       </div>
       <!-- Tab content -->
-      <div id="london" class="tab-content">
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
+      <% data.items.forEach(item => { %>
+      <div id="<%- item.title.toLowerCase() %>" class="tab-content">
+        <h3><%- item.title %></h3>
+        <p><%- item.description %></p>
       </div>
-      <div id="paris" class="tab-content">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-      </div>
-      <div id="tokyo" class="tab-content">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-      </div>
+      <% }) %>
+      <% } %>
     </div>
+  </div>
 </section>

@@ -1,0 +1,64 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="accordion accordion--toggle" class="mtg-comp-highlight">
+      <div class="accordion-inner accordion-textbox__column">
+        <h2 class="accordion-headline accordion-display__mo">
+          <span class="accordion-text"><%- data.title %></span>
+        </h2>
+        <div class="accordion-textbox accordion-textbox__vertical">
+          <h2 class="accordion-headline accordion-display__pc">
+            <span class="accordion-text"><%- data.title %></span>
+          </h2>
+          <p class="accordion-description">
+            <span class="accordion-text">
+              <%- data.description %>
+            </span>
+          </p>
+          <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
+          <div class="accordion-wrap">
+            <div class="accordion-list" role="list">
+              <% data.items.forEach((item, index) => { %>
+              <div class="accordion-item js-accordion-item js-bg-img" role="listitem">
+                <div class="accordion-title__wrap">
+                  <h3 class="accordion-title">
+                    <span id="titanium-accordion-item<%= index + 1 %>-title">
+                      <%- item.title %>
+                    </span>
+                    <button type="button" class="accordion-title__arrow js-accordion-cta" aria-expanded="false" aria-controls="titanium-accordion-item<%= index + 1 %>" aria-labelledby="titanium-accordion-item<%= index + 1 %>-title"></button>
+                  </h3>
+                </div>
+                <div class="accordion-content__wrap js-accordion-content" id="titanium-accordion-item<%= index + 1 %>" aria-hidden="true" tabindex="-1">
+                  <div class="accordion-content">
+                    <div class="accordion-content__image">
+                      <img src="/assets/images/blank.gif" class="js-lazy-img js-res-img" data-src-pc="/assets/images/<%= item.imageSrcPc %>" data-src-mo="/assets/images/<%= item.imageSrcMo %>" alt="<%= item.imageAlt %>" />
+                    </div>
+                    <p class="accordion-description">
+                      <span class="common-text">
+                        <%- item.description %>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <div class="accordion-image">
+          <img src="/assets/images/blank.gif" class="js-lazy-img js-res-img js-img-src" data-src-pc="/assets/images/<%= data.imageSrcPc %>" data-src-mo="/assets/images/<%= data.imageSrcMo %>" alt="<%= data.imageAlt %>" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

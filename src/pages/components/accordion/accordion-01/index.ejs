@@ -1,0 +1,39 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="accordion accordion--basic">
+      <div class="accordion-feature">
+        <h2 class="accordion-feature__title"><%- data.title %></h2>
+        <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
+        <ul class="accordion-list" role="list">
+          <% data.items.forEach((item, index) => { %>
+          <li class="accordion-item js-bg-img" role="listitem" aria-expanded="false">
+            <h3 class="accordion-question">
+              <button type="button" class="accordion-question__arrow" aria-expanded="false" aria-controls="faq_item<%= index + 1 %>">
+                <%= item.title %>
+              </button>
+            </h3>
+            <div class="accordion-answer" id="faq_item<%= index + 1 %>" tabindex="-1" aria-hidden="true">
+              <div class="accordion-answer__inner">
+                <p>
+                  <%- item.description %>
+                </p>
+              </div>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>

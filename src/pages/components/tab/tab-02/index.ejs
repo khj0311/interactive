@@ -12,21 +12,19 @@
   <div class="component">
     <div class="tab tab--effect">
       <!-- Tab links -->
+      <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
       <div class="tab-list">
-        <button class="tab-item tab-item--yellow"></button>
-        <button class="tab-item tab-item--gray"></button>
-        <button class="tab-item tab-item--blue"></button>
+        <% data.items.forEach(item => { %>
+        <button class="tab-item tab-item--<%= item.color %>"></button>
+        <% }) %>
       </div>
       <!-- Tab content -->
+      <% data.items.forEach(item => { %>
       <div class="tab-content">
-        <img class="tab-img" src="/assets/images/tab02-device-image01.jpg" />
+        <img class="tab-img" src="/assets/images/<%= item.imageSrc %>" />
       </div>
-      <div class="tab-content">
-        <img class="tab-img" src="/assets/images/tab02-device-image02.jpg" />
-      </div>
-      <div class="tab-content">
-        <img class="tab-img" src="/assets/images/tab02-device-image03.jpg" />
-      </div>
+      <% }) %>
+      <% } %>
     </div>
   </div>
 </section>

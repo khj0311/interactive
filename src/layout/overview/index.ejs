@@ -1,13 +1,11 @@
 <div class="overview">
   <div class="overview-header">
-    <% if (typeof data.contents !== 'undefined' && data.contents.length > 0) { %>
-    <h2 class="overview-header__title"><%= data.title %></h2>
-    <% } %>
+    <h2 class="overview-header__title"><%= data.name %></h2>
     <% if (typeof data.libs !=='undefined' && data.libs.length > 0) { %>
     <ul class="overview-header__libs">
       <% for( let index = 0; index < data.libs.length; index++ ) { %>
       <li class="overview-header__libs-item">
-        <a class="overview-header__libs-link" href="<%= data.libs[index].href %>"><%= data.libs[index].name.toUpperCase() %></a>
+        <a class="overview-header__libs-link" href="<%= data.libs[index].href %>" target="_blank"><%= data.libs[index].name.toUpperCase() %></a>
       </li>
       <% } %>
     </ul>
@@ -31,7 +29,7 @@
       <% if (typeof data.refUrl !== 'undefined' && data.refUrl !== '') { %>
       <p class="accordion-container__text">
         Reference URL :
-        <a class="accordion-container__link" href="<%= data.refUrl %>"><%= data.refUrl %></a>
+        <a class="accordion-container__link" href="<%= data.refUrl %>" target="_blank"><%= data.refUrl %></a>
       </p>
       <% } %>
     </div>

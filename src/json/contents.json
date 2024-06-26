@@ -2,43 +2,144 @@
   "contents": [
     {
       "type": "category",
-      "title": "Home",
+      "name": "Home",
       "id": "home"
     },
     {
       "type": "category",
-      "title": "Components",
+      "name": "Components",
       "id": "components",
       "contents": [
         {
-          "title": "Tab",
+          "name": "Tab",
           "id": "tab",
           "contents": [
             {
-              "title": "Tab Basic",
+              "name": "Tab Basic",
               "id": "tab-01",
+              "goals": ["클릭한 탭 리스트의 컨텐츠 노출", "init 시 첫번째 탭 <mark>active</mark> 클래스 추가"],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#bp-ecg",
+
+              "items": [
+                { "title": "London", "description": "London is the capital city of England." },
+                { "title": "Paris", "description": "Paris is the capital city of France." },
+                { "title": "Tokyo", "description": "Tokyo is the capital city of Japan." }
+              ]
+            },
+            {
+              "name": "Tab Effect",
+              "id": "tab-02",
+              "goals": [
+                "클릭한 탭 리스트의 컨텐츠 노출",
+                "init 시 첫번째 탭 <mark>active</mark> 클래스 추가",
+                "tab 클릭시 이전 이미지가 보이는 상태에서 클릭 된 이미지 fade in 효과 추가"
+              ],
+
+              "items": [
+                { "color": "yellow", "imageSrc": "tab02-device-image01.jpg" },
+                { "color": "gray", "imageSrc": "tab02-device-image02.jpg" },
+                { "color": "blue", "imageSrc": "tab02-device-image03.jpg" }
+              ]
+            },
+            {
+              "name": "Tab Slider",
+              "id": "tab-03",
+              "goals": [
+                "클릭한 탭 리스트의 컨텐츠 노출",
+                "init 시 첫번째 탭 <mark>active</mark> 클래스 추가",
+                "tab 클릭시 해당 band로 translate",
+                "tab 클릭시 이동된 band 개수만큼 duration 조정 <br /> 예) 1개 이동: 400ms, 2개 이동: 800ms, 3개 이동: 1200ms"
+              ],
+
+              "imageSrc": "tab03-screen-image.png",
+
+              "items": [
+                { "color": "Rainbow", "imageSrc": "tab03-band-image01.jpg" },
+                { "color": "Black", "imageSrc": "tab03-band-image02.jpg" },
+                { "color": "Mint", "imageSrc": "tab03-band-image03.jpg" },
+                { "color": "Blue", "imageSrc": "tab03-band-image04.jpg" },
+                { "color": "Gold", "imageSrc": "tab03-band-image05.jpg" },
+                { "color": "Gray", "imageSrc": "tab03-band-image06.jpg" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Accordion",
+          "id": "accordion",
+          "contents": [
+            {
+              "name": "Accordion Basic",
+              "id": "accordion-01",
               "libs": [
                 {
                   "href": "https://gsap.com/docs/v3/",
                   "name": "gsap"
                 }
               ],
-              "goals": ["클릭한 탭 리스트의 컨텐츠 노출", "init 시 첫번째 탭 <mark>active</mark> 추가"],
-              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#bp-ecg"
-            },
-            {
-              "title": "Tab Effect",
-              "id": "tab-02",
-              "goals": ["클릭한 탭 리스트의 컨텐츠 노출", "init 시 첫번째 탭 <mark>active</mark> 추가", "tab 클릭시 이전 이미지가 보이는 상태에서 클릭 된 이미지 fade in 효과 추가"]
-            },
-            {
-              "title": "Tab Slider",
-              "id": "tab-03",
               "goals": [
-                "클릭한 탭 리스트의 컨텐츠 노출",
-                "init 시 첫번째 탭 <mark>active</mark> 추가",
-                "tab 클릭시 해당 band로 translate",
-                "tab 클릭시 이동된 band 개수만큼 duration 조정 <br /> 예) 1개 이동: 400ms, 2개 이동: 800ms, 3개 이동: 1200ms"
+                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .mtg-comp-faq__answer의 높이값을 컨텐츠 높이에 맞게 변경",
+                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .mtg-comp-faq__answer의 높이값 초기화"
+              ],
+              "refUrl": "https://www.samsung.com/uk/smartphones/galaxy-s24-ultra/#faq",
+
+              "title": "Frequently Asked Questions",
+
+              "items": [
+                {
+                  "title": "Galaxy S24 Ultra vs Galaxy S23 Ultra - what's different?",
+                  "description": "An upgraded processor drives Galaxy S24 Ultra with NPU performance improved by 41%, GPU by 30% and CPU by 20% compared to Galaxy S23 Ultra. Its Vapour Chamber is 92% larger than its predecessor for improved heat dissipation. At 2600 nits, Galaxy S24 Ultra has the brightest adaptive display on a Galaxy yet. Plus, with Corning® Gorilla® Armor, the screen is less reflective than Galaxy S23 Ultra. Finally, Galaxy S24 Ultra has a 200MP Wide-angle Camera with ProVisual engine for AI enhancement, which is the first application on a Galaxy smartphone.<br /><br />Learn more about the key <a href='//www.samsung.com/uk/mobile-phone-buying-guide/galaxy-s24-vs-s23/' style='color: blue; text-decoration: underline'>differences between the Galaxy S24 and Galaxy S23</a> in our helpful article."
+                },
+                {
+                  "title": "How good is the Galaxy S24 Ultra camera?",
+                  "description": "The Galaxy S24 Ultra's camera is head and shoulders above the rest. It is the first ever Galaxy smartphone to come equipped with the Quad Tele system, allowingyou to take clearer and crisper photos in the optical zoom range.<br /><br />Learn more about the epic <a href='//www.samsung.com/uk/mobile-phone-buying-guide/samsung-galaxy-s24-camera-specs-explained/' style='color: blue; text-decoration: underline'>Galaxy S24 Ultra camera features</a> in our helpful article."
+                },
+                {
+                  "title": "How big is the Galaxy S24 Ultra screen size compared to Galaxy S24+?",
+                  "description": "The Galaxy S24 Ultra has a 6.8-inch screen size, which is 0.6 inches larger than Galaxy S24 at 6.2 inches and 0.1 inches larger than the Galaxy S24+ at 6.7inches.<br /><br />Find the <a href='//www.samsung.com/uk/mobile-phone-buying-guide/introducing-samsung-galaxy-s24/' style='color: blue; text-decoration: underline'>best Galaxy S24 phone</a> for you in this helpful guide."
+                },
+                {
+                  "title": "How long does the battery last on Galaxy S24 Ultra?",
+                  "description": "The Galaxy S24 Ultra battery lasts up to 30 hours and can play music for up to 95 hours, thanks to the 5,000mAh (typical) battery power."
+                }
+              ]
+            },
+            {
+              "name": "Accordion Toggle",
+              "id": "accordion-02",
+              "libs": [
+                {
+                  "href": "https://gsap.com/docs/v3/",
+                  "name": "gsap"
+                }
+              ],
+              "goals": [
+                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .mtg-comp-accordion__content-wrap의 높이값을 컨텐츠 높이에 맞게 변경 (다른 아코디언 탭이 열려있을경우 닫혀야함)",
+                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .mtg-comp-accordion__content-wrap의 높이값 초기화"
+              ],
+              "refUrl": "https://www.samsung.com/uk/smartphones/galaxy-s24-ultra/#form-factor",
+
+              "title": "Armor up with titanium",
+              "description": "Check out the upgrade — a durable shield of titanium built right into the frame. The strength of titanium is now at your fingertips.",
+              "imageSrcPc": "accordion02-main-image-pc.jpg",
+              "imageSrcMo": "accordion02-main-image-mo.jpg",
+              "imageAlt": "A close up of the Galaxy S24 Ultra display at a slight angle showing the sides.",
+
+              "items": [
+                {
+                  "title": "Better scratch resistance with Corning® Gorilla® Armor",
+                  "description": "Corning® Gorilla® Armor helps protect your screen from scratches to keep your device looking beautiful.",
+                  "imageSrcPc": "accordion02-content-image-pc01.jpg",
+                  "imageSrcMo": "accordion02-content-image-mo01.jpg",
+                  "imageAlt": "A transparent layer representing Corning® Gorilla® Armor hovers over Galaxy S24 Ultra."
+                },
+                {
+                  "title": "Water and dust resistant. Worry free",
+                  "description": "Don't let water dampen your spirits. Galaxy S24 Ultra is IP68 water and dust resistant — so you're ready for every adventure, puddles and all.",
+                  "imageSrcPc": "accordion02-content-image-pc02.jpg",
+                  "imageSrcMo": "accordion02-content-image-mo02.jpg",
+                  "imageAlt": "Water splashes against Galaxy S24 Ultra."
+                }
               ]
             }
           ]
@@ -47,7 +148,7 @@
     },
     {
       "type": "category",
-      "title": "Interactions",
+      "name": "Interactions",
       "id": "interactions"
     }
   ]

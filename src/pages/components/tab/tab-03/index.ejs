@@ -12,30 +12,26 @@
   <div class="component">
     <div class="tab tab--slider">
       <!-- Tab links -->
+      <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
       <ul class="tab-list">
-        <li><button class="tab-item">Rainbow</button></li>
-        <li><button class="tab-item">Black</button></li>
-        <li><button class="tab-item">Mint</button></li>
-        <li><button class="tab-item">Blue</button></li>
-        <li><button class="tab-item">Gold</button></li>
-        <li><button class="tab-item">Gray</button></li>
+        <% data.items.forEach(item => { %>
+        <li><button class="tab-item"><%= item.color %></button></li>
+        <% }) %>
       </ul>
       <!-- Tab content -->
       <div class="tab-content">
         <div class="tab-band band">
           <div class="band-wrap js-band-wrap">
-            <img class="band-img" src="/assets/images/tab03-band-image01.jpg" />
-            <img class="band-img" src="/assets/images/tab03-band-image02.jpg" />
-            <img class="band-img" src="/assets/images/tab03-band-image03.jpg" />
-            <img class="band-img" src="/assets/images/tab03-band-image04.jpg" />
-            <img class="band-img" src="/assets/images/tab03-band-image05.jpg" />
-            <img class="band-img" src="/assets/images/tab03-band-image06.jpg" />
+            <% data.items.forEach(item => { %>
+            <img class="band-img" src="/assets/images/<%- item.imageSrc %>" />
+            <% }) %>
           </div>
         </div>
         <div class="tab-screen">
-          <img class="tab-screen__img" src="/assets/images/tab03-screen-image.png" />
+          <img class="tab-screen__img" src="/assets/images/<%- data.imageSrc %>" />
         </div>
       </div>
+      <% } %>
     </div>
   </div>
 </section>

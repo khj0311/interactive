@@ -18,7 +18,7 @@
                   <use xlink:href="/assets/images/icon-sprite.svg#icon-<%= menu.id %>" />
                 </svg>
                 <span class="menu-link__title">
-                  <%- menu.title %>
+                  <%- menu.name %>
                   <svg class="menu-link__title-arrow">
                     <use xlink:href="/assets/images/icon-sprite.svg#icon-angle-right" />
                   </svg>
@@ -31,16 +31,16 @@
                       <% menu.contents.forEach(subMenu => { %>
                       <% if (typeof subMenu.contents !== 'undefined' && subMenu.contents.length > 0) { %>
                       <li class="sub-menu-title">
-                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.title %></a>
+                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% subMenu.contents.forEach(subMenuItem => { %>
                       <li class="sub-menu-item">
-                        <a href="<%= subMenuItem.path %>/index.html" class="sub-menu-link"><%= subMenuItem.title %></a>
+                        <a href="<%= subMenuItem.path %>/index.html" class="sub-menu-link"><%= subMenuItem.name %></a>
                       </li>
                       <% }) %>
                       <% } else { %>
                       <li class="sub-menu-item">
-                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.title %></a>
+                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% } %>
                       <% }) %>
@@ -55,7 +55,7 @@
                 <svg class="menu-link__icon">
                   <use xlink:href="/assets/images/icon-sprite.svg#icon-<%= menu.id %>" />
                 </svg>
-                <span class="menu-link__title"><%- menu.title %></span>
+                <span class="menu-link__title"><%- menu.name %></span>
               </a>
             </li>
             <% } %>

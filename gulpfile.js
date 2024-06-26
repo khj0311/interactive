@@ -44,7 +44,7 @@ function webServer() {
 function gulpWatch(cb) {
   watch('./src/**/**.ejs', buildHtml);
   watch('./src/pages/**/**.js', series(buildComponentJS, buildHtml));
-  watch(['./src/common/js/**.js', './src/layout/**/**.js'], series(buildCommonJS, buildHtml));
+  watch(['./src/common/js/vendor/**.js', './src/common/js/**.js', './src/layout/**/**.js'], series(buildCommonJS, buildHtml));
   watch('./src/pages/**/**.scss', series(buildComponentCSS, buildHtml));
   watch(['./src/common/scss/**.scss', './src/layout/**/**.scss'], series(buildCommonCSS, buildHtml));
   watch('./src/json/**.json', series(loadData, buildData, parallel(buildComponentJS, buildComponentCSS), buildHtml));
@@ -102,7 +102,7 @@ async function buildComponentJS(cb, data = contents) {
 }
 
 async function buildCommonJS(cb) {
-  src(['./src/common/js/**.js', './src/layout/**/**.js'], { allowEmpty: true })
+  src(['./src/common/js/vendor/**.js', './src/common/js/**.js', './src/layout/**/**.js'], { allowEmpty: true })
     .pipe(concat('common.js'))
     .pipe(dest(`./public/common/js`))
     .pipe(browserSync.reload({ stream: true }));
@@ -122,7 +122,7 @@ async function buildComponentCSS(cb, data = contents) {
 
     if (content.type !== 'category') {
       src(`./src/pages${path}/main.scss`, { allowEmpty: true })
-        .pipe(scss(scssOptions))
+        .pipe(scss(scssOptions).on('error', errorHandler))
         .pipe(concat('main.css'))
         .pipe(dest(`./public${path}`))
         .pipe(browserSync.reload({ stream: true }));
@@ -134,7 +134,7 @@ async function buildComponentCSS(cb, data = contents) {
 
 async function buildCommonCSS(cb) {
   src(['./src/common/scss/**.scss', './src/layout/**/**.scss'], { allowEmpty: true })
-    .pipe(scss(scssOptions))
+    .pipe(scss(scssOptions).on('error', errorHandler))
     .pipe(concat('common.css'))
     .pipe(dest(`./public/common/css`))
     .pipe(browserSync.reload({ stream: true }));

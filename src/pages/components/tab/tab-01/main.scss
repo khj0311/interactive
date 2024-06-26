@@ -1,4 +1,8 @@
-.tab {
+.component .tab {
+  &--basic {
+    padding: 0 20px;
+  }
+
   &:is(&--basic) .tab {
     &-list {
       overflow: hidden;

@@ -1,4 +1,4 @@
-.tab {
+.component .tab {
   &--slider {
     position: relative;
     height: 500px;
@@ -37,6 +37,7 @@
 
       &__img {
         height: auto;
+        width: 100%;
         max-width: 500px;
       }
     }
@@ -48,7 +49,7 @@
         &-wrap {
           max-height: 500px;
           transition: transform 400ms;
-          width: max-content;
+          width: 100%;
           padding-inline-start: calc(50% - 250px);
           display: flex;
           flex-wrap: nowrap;
@@ -56,6 +57,7 @@
 
         &-img {
           height: auto;
+          width: 100%;
           max-width: 500px;
         }
       }

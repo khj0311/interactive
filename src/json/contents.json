@@ -1,0 +1,54 @@
+{
+  "contents": [
+    {
+      "type": "category",
+      "title": "Home",
+      "id": "home"
+    },
+    {
+      "type": "category",
+      "title": "Components",
+      "id": "components",
+      "contents": [
+        {
+          "title": "Tab",
+          "id": "tab",
+          "contents": [
+            {
+              "title": "Tab Basic",
+              "id": "tab-01",
+              "libs": [
+                {
+                  "href": "https://gsap.com/docs/v3/",
+                  "name": "gsap"
+                }
+              ],
+              "goals": ["클릭한 탭 리스트의 컨텐츠 노출", "init 시 첫번째 탭 <mark>active</mark> 추가"],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#bp-ecg"
+            },
+            {
+              "title": "Tab Effect",
+              "id": "tab-02",
+              "goals": ["클릭한 탭 리스트의 컨텐츠 노출", "init 시 첫번째 탭 <mark>active</mark> 추가", "tab 클릭시 이전 이미지가 보이는 상태에서 클릭 된 이미지 fade in 효과 추가"]
+            },
+            {
+              "title": "Tab Slider",
+              "id": "tab-03",
+              "goals": [
+                "클릭한 탭 리스트의 컨텐츠 노출",
+                "init 시 첫번째 탭 <mark>active</mark> 추가",
+                "tab 클릭시 해당 band로 translate",
+                "tab 클릭시 이동된 band 개수만큼 duration 조정 <br /> 예) 1개 이동: 400ms, 2개 이동: 800ms, 3개 이동: 1200ms"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "title": "Interactions",
+      "id": "interactions"
+    }
+  ]
+}

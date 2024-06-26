@@ -1,0 +1,64 @@
+.tab {
+  &--slider {
+    position: relative;
+    height: 500px;
+  }
+
+  :is(&--slider) .tab {
+    &-list {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      background: #e8e8ed;
+      color: #1d1d1f;
+      padding: 10px 18px;
+      border-radius: 20px;
+    }
+
+    &-item {
+      padding: 0 5px;
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+
+    &-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      &__img {
+        height: auto;
+        max-width: 500px;
+      }
+    }
+
+    &-band {
+      width: 100%;
+
+      .band {
+        &-wrap {
+          max-height: 500px;
+          transition: transform 400ms;
+          width: max-content;
+          padding-inline-start: calc(50% - 250px);
+          display: flex;
+          flex-wrap: nowrap;
+        }
+
+        &-img {
+          height: auto;
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}

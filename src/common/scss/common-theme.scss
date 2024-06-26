@@ -1,0 +1,193 @@
+@import '../scss/abstracts/variables';
+
+svg {
+  fill: $color-yellow-level3;
+}
+
+.theme-green {
+  svg {
+    fill: $color-green-level3;
+  }
+  .sidebar {
+    &-separate {
+      border-color: $color-green-level3 !important;
+    }
+    &-header {
+      &__link {
+        color: $color-green-level3 !important;
+      }
+    }
+    .menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-green-level3 !important;
+
+          &:hover {
+            background-color: $color-green-level4 !important;
+          }
+        }
+      }
+    }
+    .sub-menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-green-level3 !important;
+
+          &:hover {
+            background-color: $color-green-level4 !important;
+          }
+        }
+      }
+      &-title {
+        color: $color-green-level2 !important;
+      }
+    }
+  }
+  &.sidebar-expanded {
+    .interface-sidebar {
+      background-color: $color-green-level3;
+    }
+  }
+  .settings {
+    &-header {
+      &__title {
+        color: $color-green-level3;
+      }
+    }
+  }
+  .overview-header__libs-link {
+    border: 1px solid $color-green-level3 !important;
+    color: $color-green-level3 !important;
+  }
+  .accordion mark {
+    background-color: $color-green-level3 !important;
+  }
+}
+
+.theme-blue {
+  svg {
+    fill: $color-blue-level3;
+  }
+  .sidebar {
+    &-separate {
+      border-color: $color-blue-level3 !important;
+    }
+
+    &-header {
+      &__link {
+        color: $color-blue-level3 !important;
+      }
+    }
+
+    .menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-blue-level3 !important;
+
+          &:hover {
+            background-color: $color-blue-level4 !important;
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-blue-level3 !important;
+
+          &:hover {
+            background-color: $color-blue-level4 !important;
+          }
+        }
+      }
+
+      &-title {
+        color: $color-blue-level2 !important;
+      }
+    }
+  }
+  &.sidebar-expanded {
+    .interface-sidebar {
+      background-color: $color-blue-level3;
+    }
+  }
+  .settings {
+    &-header {
+      &__title {
+        color: $color-blue-level3;
+      }
+    }
+  }
+  .overview-header__libs-link {
+    border: 1px solid $color-blue-level3 !important;
+    color: $color-blue-level3 !important;
+  }
+  .accordion mark {
+    background-color: $color-blue-level3 !important;
+  }
+}
+
+.theme-red {
+  svg {
+    fill: $color-red-level3;
+  }
+  .sidebar {
+    &-separate {
+      border-color: $color-red-level3 !important;
+    }
+
+    &-header {
+      &__link {
+        color: $color-red-level3 !important;
+      }
+    }
+
+    .menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-red-level3 !important;
+
+          &:hover {
+            background-color: $color-red-level4 !important;
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      &-link {
+        &.menu-active {
+          background-color: $color-red-level3 !important;
+
+          &:hover {
+            background-color: $color-red-level4 !important;
+          }
+        }
+      }
+
+      &-title {
+        color: $color-red-level2 !important;
+      }
+    }
+  }
+  &.sidebar-expanded {
+    .interface-sidebar {
+      background-color: $color-red-level3;
+    }
+  }
+  .settings {
+    &-header {
+      &__title {
+        color: $color-red-level3;
+      }
+    }
+  }
+  .overview-header__libs-link {
+    border: 1px solid $color-red-level3 !important;
+    color: $color-red-level3 !important;
+  }
+  .accordion mark {
+    background-color: $color-red-level3 !important;
+  }
+}

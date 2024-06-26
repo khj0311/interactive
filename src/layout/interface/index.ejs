@@ -1,0 +1,199 @@
+<div id="interface" class="interface">
+  <div class="interface-container">
+    <button class="interface-button interface-top">
+      <svg class="interface-button__icon">
+        <use xlink:href="/assets/images/icon-sprite.svg#icon-arrow-top" />
+      </svg>
+    </button>
+    <div class="interface-wrapper">
+      <button class="interface-button interface-sidebar">
+        <svg class="interface-button__icon interface-sidebar__expand">
+          <use xlink:href="/assets/images/icon-sprite.svg#icon-angles-left" />
+        </svg>
+        <svg class="interface-button__icon interface-sidebar__collapsed">
+          <use xlink:href="/assets/images/icon-sprite.svg#icon-menu" />
+        </svg>
+      </button>
+      <button class="interface-button interface-settings">
+        <svg class="interface-button__icon">
+          <use xlink:href="/assets/images/icon-sprite.svg#icon-settings" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="settings" class="settings">
+  <div class="settings-dimmed"></div>
+  <div class="settings-container">
+    <div class="settings-wrapper">
+      <div class="settings-header">
+        <h6 class="settings-header__title">App settings</h6>
+        <div class="settings-header-wrapper">
+          <button class="settings-header__button settings-reset">
+            <svg class="settings-header__button-icon">
+              <use xlink:href="/assets/images/icon-sprite.svg#icon-reset" />
+            </svg>
+          </button>
+          <button class="settings-header__button settings-close">
+            <svg class="settings-header__button-icon">
+              <use xlink:href="/assets/images/icon-sprite.svg#icon-close" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="settings-content">
+        <div class="settings-content__item">
+          <div class="item-title">Mode</div>
+          <div class="item-options">
+            <div class="item-option">
+              <button class="item-option__button">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-light" />
+                </svg>
+                <span class="item-option__button-text">Light</span>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button item-selected">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dark" />
+                </svg>
+                <span class="item-option__button-text">Dark</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item settings-color">
+          <div class="item-title">Color presets</div>
+          <div class="item-options">
+            <div class="item-option">
+              <button class="item-option__button option-green" data-theme-color="theme-green">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-circle" />
+                </svg>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button option-yellow item-selected" data-theme-color="theme-yellow">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-circle" />
+                </svg>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button option-blue" data-theme-color="theme-blue">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-circle" />
+                </svg>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button option-red" data-theme-color="theme-red">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-circle" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item settings-stretch">
+          <div class="item-title">Stretch</div>
+          <div class="item-options item-once">
+            <div class="item-option">
+              <button class="item-option__button">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-angle-left" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dash" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dash" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dash" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dash" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-dash" />
+                </svg>
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-angle-right" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item">
+          <div class="item-title">Orientation</div>
+          <div class="item-options">
+            <div class="item-option">
+              <button class="item-option__button item-selected">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-ltr" />
+                </svg>
+                <span class="item-option__button-text">Left-to-right</span>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-rtl" />
+                </svg>
+                <span class="item-option__button-text">Right-to-left</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item settings-fullscreen">
+          <div class="item-options item-once">
+            <div class="item-option">
+              <button class="item-option__button">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-expand" />
+                </svg>
+                <span class="item-option__button-text">Fullscreen</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item">
+          <div class="item-title">Preview</div>
+          <div class="item-options">
+            <div class="item-option">
+              <button class="item-option__button item-selected">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-ltr" />
+                </svg>
+                <span class="item-option__button-text">go to preview page</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="settings-content__item">
+          <div class="item-title">Component</div>
+          <div class="item-options">
+            <div class="item-option">
+              <button class="item-option__button item-selected">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-ltr" />
+                </svg>
+                <span class="item-option__button-text">% Line</span>
+              </button>
+            </div>
+            <div class="item-option">
+              <button class="item-option__button item-selected">
+                <svg class="item-option__button-icon">
+                  <use xlink:href="/assets/images/icon-sprite.svg#icon-ltr" />
+                </svg>
+                <span class="item-option__button-text">Gap Top/Bottom</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

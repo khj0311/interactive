@@ -1,0 +1,41 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="tab tab--slider">
+      <!-- Tab links -->
+      <ul class="tab-list">
+        <li><button class="tab-item">Rainbow</button></li>
+        <li><button class="tab-item">Black</button></li>
+        <li><button class="tab-item">Mint</button></li>
+        <li><button class="tab-item">Blue</button></li>
+        <li><button class="tab-item">Gold</button></li>
+        <li><button class="tab-item">Gray</button></li>
+      </ul>
+      <!-- Tab content -->
+      <div class="tab-content">
+        <div class="tab-band band">
+          <div class="band-wrap js-band-wrap">
+            <img class="band-img" src="/assets/images/tab03-band-image01.jpg" />
+            <img class="band-img" src="/assets/images/tab03-band-image02.jpg" />
+            <img class="band-img" src="/assets/images/tab03-band-image03.jpg" />
+            <img class="band-img" src="/assets/images/tab03-band-image04.jpg" />
+            <img class="band-img" src="/assets/images/tab03-band-image05.jpg" />
+            <img class="band-img" src="/assets/images/tab03-band-image06.jpg" />
+          </div>
+        </div>
+        <div class="tab-screen">
+          <img class="tab-screen__img" src="/assets/images/tab03-screen-image.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

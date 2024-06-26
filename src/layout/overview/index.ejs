@@ -1,0 +1,77 @@
+<div class="overview">
+  <div class="overview-header">
+    <% if (typeof data.contents !== 'undefined' && data.contents.length > 0) { %>
+    <h2 class="overview-header__title"><%= data.title %></h2>
+    <% } %>
+    <% if (typeof data.libs !=='undefined' && data.libs.length > 0) { %>
+    <ul class="overview-header__libs">
+      <% for( let index = 0; index < data.libs.length; index++ ) { %>
+      <li class="overview-header__libs-item">
+        <a class="overview-header__libs-link" href="<%= data.libs[index].href %>"><%= data.libs[index].name.toUpperCase() %></a>
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+  </div>
+
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <div class="accordion accordion--goals">
+    <div class="accordion-header">
+      <a href="javascript:void(0)" class="accordion-header__btn">
+        <h3>🛠️ 개발 목표</h3>
+        <img class="accordion-header__img" src="/assets/images/arrow.svg" />
+      </a>
+    </div>
+    <div class="accordion-container">
+      <ol>
+        <% data.goals.forEach(goal => { %>
+        <li class="accordion-container__item"><%- goal %></li>
+        <% }) %>
+      </ol>
+      <% if (typeof data.refUrl !== 'undefined' && data.refUrl !== '') { %>
+      <p class="accordion-container__text">
+        Reference URL :
+        <a class="accordion-container__link" href="<%= data.refUrl %>"><%= data.refUrl %></a>
+      </p>
+      <% } %>
+    </div>
+  </div>
+  <% } %>
+
+  <% if (typeof data.controls !== 'undefined' && data.controls.length > 0) { %>
+  <div class="accordion accordion--controls">
+    <div class="accordion-header">
+      <a href="javascript:void(0)" class="accordion-header__btn">
+        <h3>🕹️ Controls</h3>
+        <img class="accordion-header__img" src="/assets/images/arrow.svg" />
+      </a>
+    </div>
+    <div class="accordion-container">
+      <table class="accordion-container__table">
+        <thead>
+          <tr>
+            <th class="table__title">Name</th>
+            <th class="table__title">Description</th>
+            <th class="table__title">Default</th>
+            <th class="table__title">Control <button class="table__button">저장</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row">
+            <td class="table__description">Start</td>
+            <td class="table__description">뷰포트 기준 시작 지점</td>
+            <td class="table__description">0%</td>
+            <td class="table__description"><input class="table__input" type="text" placeholder="0%" /></td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__description">End</td>
+            <td class="table__description">뷰포트 기준 끝나는 지점</td>
+            <td class="table__description">50%</td>
+            <td class="table__description"><input class="table__input" type="text" placeholder="50%" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% } %>
+</div>

@@ -1,0 +1,32 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="tab tab--effect">
+      <!-- Tab links -->
+      <div class="tab-list">
+        <button class="tab-item tab-item--yellow"></button>
+        <button class="tab-item tab-item--gray"></button>
+        <button class="tab-item tab-item--blue"></button>
+      </div>
+      <!-- Tab content -->
+      <div class="tab-content">
+        <img class="tab-img" src="/assets/images/tab02-device-image01.jpg" />
+      </div>
+      <div class="tab-content">
+        <img class="tab-img" src="/assets/images/tab02-device-image02.jpg" />
+      </div>
+      <div class="tab-content">
+        <img class="tab-img" src="/assets/images/tab02-device-image03.jpg" />
+      </div>
+    </div>
+  </div>
+</section>

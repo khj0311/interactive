@@ -1,0 +1,65 @@
+$mobile: 768;
+$tablet: 1440;
+$desktop: 1920;
+
+/* mediaquery: 반응형, 브라우저 크기가 1440px 이상일때*/
+/* @include desktop{} */
+@mixin desktop {
+  @media (min-width: #{$tablet}px) {
+    @content;
+  }
+}
+
+/* mediaquery: 반응형, 브라우저 크기가 768px 이상, 1440px 미만일때*/
+/* @include tablet{} */
+@mixin tablet {
+  @media (min-width: #{$mobile}px) and (max-width: #{$tablet - 1}px) {
+    @content;
+  }
+}
+
+/* mediaquery: 반응형, 브라우저 크기가 768px 미만일때*/
+/* @include mobile{} */
+@mixin mobile {
+  @media (max-width: #{$mobile - 1}px) {
+    @content;
+  }
+}
+
+@mixin vw-pc($property, $px) {
+  $w: calc(1 / $tablet * 100);
+
+  $pxs: null;
+  $vws: null;
+  @each $v in $px {
+    @if type-of($v) == 'number' {
+      $px: calc($v / 1);
+      $pxs: append($pxs, if($px == 0, 0, $px + px));
+      $vw: $px * $w;
+      $vws: append($vws, if($vw == 0, 0, $vw + vw));
+    } @else {
+      $pxs: append($pxs, $v);
+      $vws: append($vws, $v);
+    }
+  }
+  #{$property}: $pxs;
+  @include tablet {
+    #{$property}: $vws;
+  }
+}
+
+@mixin vw-mo($property, $px) {
+  $w: calc(1 / $mobile * 100);
+
+  $vws: null;
+  @each $v in $px {
+    @if type-of($v) == 'number' {
+      $px: calc($v / 1);
+      $vw: $px * $w;
+      $vws: append($vws, if($vw == 0, 0, $vw + vw));
+    } @else {
+      $vws: append($vws, $v);
+    }
+  }
+  #{$property}: $vws;
+}

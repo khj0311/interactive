@@ -155,6 +155,88 @@
             { "title": "Coffee", "child": [{ "title": "Americano" }, { "title": "Latte" }] },
             { "title": "Coffee", "child": [{ "title": "Americano" }, { "title": "Latte" }] }
           ]
+        },
+        {
+          "name": "Carousel Slider",
+          "id": "carousel",
+          "goals": [
+            "TweenMax 사용해서 Easing 효과로 이미지가 아래에서 위로 올라오는 애니메이션 생성",
+            "Start Point ==> Window Bottom과 Target Top이 맞닿는 지점 (Red Line)",
+            "End Point ==> Window Top과 Target Bottom이 맞닿는 지점 (Blue Line)",
+            "Parallax TransformY 범위 : 0 ~ -15%"
+          ],
+          "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#sleep-coaching",
+          "controls": ["test"],
+
+          "title": "Find the sleep<br class='carousel-br--mo' />symbol that <br />matches your<br class='carousel-br--mo' /> sleep type",
+
+          "tabs": [
+            {
+              "id": "coachingLion",
+              "tabSrc": "carousel-lion-tab-icon.png",
+              "tabActiveSrc": "carousel-lion-tab-active-icon.png",
+              "title": "Unconcerned lion",
+              "description": "Lions are relaxed and have healthy sleep patterns.",
+              "imageSrc": "carousel-lion-main-image.png"
+            },
+            {
+              "id": "coachingHedgehog",
+              "tabSrc": "carousel-hedgehog-tab-icon.png",
+              "tabActiveSrc": "carousel-hedgehog-tab-active-icon.png",
+              "title": "Sensitive hedgehog",
+              "description": "Hedgehogs are watchful and active at night.",
+              "imageSrc": "carousel-hedgehog-main-image.png"
+            },
+            {
+              "id": "coachingPenguin",
+              "tabSrc": "carousel-penguin-tab-icon.png",
+              "tabActiveSrc": "carousel-penguin-tab-active-icon.png",
+              "title": "Nervous penguin",
+              "description": "Penguins are nervous and only sleep sporadically for 3.5 hours a day.",
+              "imageSrc": "carousel-penguin-main-image.png"
+            },
+            {
+              "id": "coachingMole",
+              "tabSrc": "carousel-mole-tab-icon.png",
+              "tabActiveSrc": "carousel-mole-tab-active-icon.png",
+              "title": "Sun-adverse mole",
+              "description": "Moles are nocturnal and sleep about 8 hours during the day.",
+              "imageSrc": "carousel-mole-main-image.png"
+            },
+            {
+              "id": "coachingDeer",
+              "tabSrc": "carousel-deer-tab-icon.png",
+              "tabActiveSrc": "carousel-deer-tab-active-icon.png",
+              "title": "Cautious deer",
+              "description": "Deer remain alert, sleeping less than 10 minutes at a time, so they can run away when they're in danger.",
+              "imageSrc": "carousel-deer-main-image.png"
+            },
+            {
+              "id": "coachingWalrus",
+              "tabSrc": "carousel-walrus-tab-icon.png",
+              "tabActiveSrc": "carousel-walrus-tab-active-icon.png",
+              "title": "Easygoing walrus",
+              "description": "Walruses can stay awake for 84 hours and sleep for up to 19 hours.",
+              "imageSrc": "carousel-walrus-main-image.png"
+            },
+            {
+              "id": "coachingAlligator",
+              "tabSrc": "carousel-alligator-tab-icon.png",
+              "tabActiveSrc": "carousel-alligator-tab-active-icon.png",
+              "title": "Alligator on the hunt",
+              "description": "Alligators are nocturnal and can sleep with one eye open as if they're winking.",
+              "imageSrc": "carousel-alligator-main-image.png"
+            },
+            {
+              "id": "coachingShark",
+              "tabSrc": "carousel-shark-tab-icon.png",
+              "tabActiveSrc": "carousel-shark-tab-active-icon.png",
+              "title": "Exhausted shark",
+              "description": "Sharks rarely sleep because they need to stay awake to breathe.",
+              "imageSrc": "carousel-shark-main-image.png"
+            }
+          ],
+          "panels": []
         }
       ]
     },

@@ -40,7 +40,7 @@
                 <div class="accordion-content__wrap js-accordion-content" id="titanium-accordion-item<%= index + 1 %>" aria-hidden="true" tabindex="-1">
                   <div class="accordion-content">
                     <div class="accordion-content__image">
-                      <img src="/assets/images/blank.gif" class="js-lazy-img js-res-img" data-src-pc="/assets/images/<%= item.imageSrcPc %>" data-src-mo="/assets/images/<%= item.imageSrcMo %>" alt="<%= item.imageAlt %>" />
+                      <img src="<%= config.blankSrc %>" class="js-lazy-img js-res-img" data-src-pc="/assets/images/accordion/<%= item.imageSrcPc %>" data-src-mo="/assets/images/accordion/<%= item.imageSrcMo %>" alt="<%= item.imageAlt %>" />
                     </div>
                     <p class="accordion-description">
                       <span class="common-text">
@@ -56,7 +56,7 @@
           <% } %>
         </div>
         <div class="accordion-image">
-          <img src="/assets/images/blank.gif" class="js-lazy-img js-res-img js-img-src" data-src-pc="/assets/images/<%= data.imageSrcPc %>" data-src-mo="/assets/images/<%= data.imageSrcMo %>" alt="<%= data.imageAlt %>" />
+          <img src="<%= config.blankSrc %>" class="js-lazy-img js-res-img js-img-src" data-src-pc="/assets/images/accordion/<%= data.imageSrcPc %>" data-src-mo="/assets/images/accordion/<%= data.imageSrcMo %>" alt="<%= data.imageAlt %>" />
         </div>
       </div>
     </div>

@@ -1,0 +1,81 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="carousel carousel--tab">
+      <div class="carousel-wrap">
+        <div class="carousel-animals">
+          <p class="carousel-animals__headline">
+            <%- data.title %>
+          </p>
+          <div class="carousel-animals__carousel carousel-animals__carousel--running">
+            <div class="carousel-control__wrap">
+              <button type="button" class="carousel-control" data-stop-text="stop automatic slide show" data-play-text="play automatic slide show">
+                <span class="carousel-control__icon carousel-control__icon--play">
+                  <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <g fill="none" fill-rule="evenodd">
+                      <path d="m19.767 15.431-7.013 4.126a.5.5 0 0 1-.754-.431v-8.252a.5.5 0 0 1 .754-.43l7.013 4.125a.5.5 0 0 1 0 .862z" fill="#fff" />
+                      <circle stroke="#ffffff" cx="15" cy="15" r="11.5" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="carousel-control__icon carousel-control__icon--pause">
+                  <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <g transform="translate(3 3)" fill="none" fill-rule="evenodd">
+                      <circle stroke="#ffffff" cx="12" cy="12" r="11.5" />
+                      <g transform="translate(8 7.5)" fill="#fff">
+                        <rect width="3" height="9" rx=".5" />
+                        <rect x="5" width="3" height="9" rx=".5" />
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+                <span class="blind">stop automatic slide show</span>
+              </button>
+            </div>
+            <div class="carousel-animals__bg" aria-hidden="true" role="presentation">
+              <img src="<%= config.blankSrc %>" class="js-lazy-img js-res-img" data-src-pc="/assets/images/carousel/carousel-main-image.png" alt="" />
+            </div>
+            <ul class="carousel-tab" role="tablist">
+              <% data.tabs.forEach((tab, index) => { %>
+              <li class="carousel-tab__item" role="presentation">
+                <button class="carousel-tab__button<% if (index === 0) { %> is-active<% } %>" role="tab" aria-controls="<%= tab.id %>" <% if (index === 0) { %>aria-selected="true" <% } %>>
+                  <span class="carousel-tab__icon" aria-hidden="true" role="presentation">
+                    <img src="<%= config.blankSrc %>" class="carousel-tab__icon--default js-lazy-img js-res-img" data-src-pc="/assets/images/carousel/<%= tab.tabSrc %>" alt="" />
+                    <img src="<%= config.blankSrc %>" class="carousel-tab__icon--active js-lazy-img js-res-img" data-src-pc="/assets/images/carousel/<%= tab.tabActiveSrc %>" alt="" />
+                  </span>
+                  <span class="blind"><%= tab.title %></span>
+                </button>
+              </li>
+              <% }) %>
+            </ul>
+            <div class="carousel-panel swiper-container">
+              <div class="swiper-wrapper">
+                <% data.tabs.forEach(tab => { %>
+                <div class="carousel-panel__item swiper-slide" role="tabpanel" id="<%= tab.id %>">
+                  <div class="carousel-panel__image">
+                    <img src="<%= config.blankSrc %>" class="js-lazy-img js-res-img" data-src-pc="/assets/images/carousel/<%= tab.imageSrc %>" alt="" aria-hidden="true" />
+                  </div>
+                  <div class="carousel-panel__text">
+                    <p class="carousel-panel__headline"><%= tab.title %></p>
+                    <p class="carousel-panel__description mtg-comp-common-description"><%= tab.description %></p>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-bg"></div>
+    </div>
+  </div>
+</section>

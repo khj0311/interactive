@@ -18,6 +18,17 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+.blind {
+  display: block;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 .interactive {
   position: relative;
   max-width: 1440px;
@@ -117,14 +128,19 @@ body {
           &__table {
             width: 100%;
             text-align: left;
+            padding: 16px 20px;
 
             .table {
               &__row {
-                border-top: 1px solid rgba($color-gray-level4, 0.8);
+                &:last-of-type {
+                  .table__description {
+                    padding-bottom: 0px;
+                  }
+                }
               }
 
               &__title {
-                padding: 14.5px 10px;
+                padding-bottom: 10px;
 
                 &:last-of-type {
                   position: relative;
@@ -133,17 +149,15 @@ body {
 
               &__button {
                 position: absolute;
-                top: 14px;
-                right: 10px;
+                right: 0;
               }
 
               &__description {
-                padding: 9px 10px;
+                padding-bottom: 10px;
               }
 
               &__input {
                 line-height: 150%;
-                width: -webkit-fill-available;
                 border: 1px solid rgba($color-gray-level4, 0.8);
                 border-radius: 4px;
                 padding: 0 5px;

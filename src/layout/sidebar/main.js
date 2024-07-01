@@ -200,7 +200,7 @@
       document.documentElement.classList.add('sidebar-expanded');
       setTimeout(() => {
         this.el.menu.style.display = 'block';
-      }, 100);
+      }, 150);
     }
 
     collapse() {

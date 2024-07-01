@@ -78,8 +78,8 @@
                 }
               ],
               "goals": [
-                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .mtg-comp-faq__answer의 높이값을 컨텐츠 높이에 맞게 변경",
-                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .mtg-comp-faq__answer의 높이값 초기화"
+                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .accrodion-answer의 높이값을 컨텐츠 높이에 맞게 변경",
+                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .accrodion-answer의 높이값 초기화"
               ],
               "refUrl": "https://www.samsung.com/uk/smartphones/galaxy-s24-ultra/#faq",
 
@@ -114,8 +114,8 @@
                 }
               ],
               "goals": [
-                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .mtg-comp-accordion__content-wrap의 높이값을 컨텐츠 높이에 맞게 변경 (다른 아코디언 탭이 열려있을경우 닫혀야함)",
-                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .mtg-comp-accordion__content-wrap의 높이값 초기화"
+                "아코디언이 열릴때, <mark>is-open</mark> 클래스 추가 및 .accordion-content__wrap 요소의 높이값을 컨텐츠 높이에 맞게 변경 (다른 아코디언 탭이 열려있을경우 닫혀야함)",
+                "아코디언이 닫힐때, <mark>is-open</mark> 클래스 삭제 및 .accordion-content__wrap 요소의 높이값 초기화"
               ],
               "refUrl": "https://www.samsung.com/uk/smartphones/galaxy-s24-ultra/#form-factor",
 
@@ -142,6 +142,18 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "name": "Tree View",
+          "id": "treeview",
+          "goals": ["자식이 있는 <mark>treeview-caret</mark> 클릭 시 하위 트리가 열리거나 닫힘", "Open all 클릭 시 전체 caret 열림", "Close all 클릭 시 전체 caret 닫힘"],
+
+          "title": "Beverages",
+          "items": [
+            { "title": "Water" },
+            { "title": "Coffee", "child": [{ "title": "Americano" }, { "title": "Latte" }] },
+            { "title": "Coffee", "child": [{ "title": "Americano" }, { "title": "Latte" }] }
           ]
         }
       ]

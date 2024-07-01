@@ -3,14 +3,19 @@
 @import '../scss/abstracts/reset';
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url(/assets/fonts/aeonik/Aeonik-Regular.woff);
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Roboto';
+  src: url(/assets/fonts/roboto/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(/assets/fonts/roboto/Roboto-Regular.ttf);
+  font-weight: 400;
 }
 
 body {
-  font-family: 'Aeonik', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .interactive {

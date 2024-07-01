@@ -7,7 +7,7 @@
       </div>
       <hr class="sidebar-separate" />
       <div class="sidebar-content">
-        <div class="menu" style="display: block;">
+        <div class="menu">
           <ul class="menu-list">
             <% const data = root.contents %>
             <% data.forEach(menu => { %>
@@ -30,7 +30,7 @@
                     <ul class="sub-menu-list">
                       <% menu.contents.forEach(subMenu => { %>
                       <% if (typeof subMenu.contents !== 'undefined' && subMenu.contents.length > 0) { %>
-                      <li class="sub-menu-title">
+                      <li class="sub-menu-title has-child">
                         <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% subMenu.contents.forEach(subMenuItem => { %>
@@ -39,7 +39,7 @@
                       </li>
                       <% }) %>
                       <% } else { %>
-                      <li class="sub-menu-item">
+                      <li class="sub-menu-title">
                         <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% } %>

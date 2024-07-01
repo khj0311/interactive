@@ -1,0 +1,51 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="treeview treeview--basic">
+      <div class="treeview-btns">
+        <button class="treeview-btns__btn treeview-btns__open">Open all</button>
+        <button class="treeview-btns__btn treeview-btns__close">Close all</button>
+      </div>
+      <ul class="treeview-list">
+        <li class="treeview-caret">
+          <button>Beverages</button>
+          <ul class="treeview-nested">
+            <li>Water</li>
+            <li class="treeview-caret">
+              <button>Coffee</button>
+              <ul class="treeview-nested">
+                <li>Americano</li>
+                <li>Latte</li>
+              </ul>
+            </li>
+            <li class="treeview-caret">
+              <button>Tea</button>
+              <ul class="treeview-nested">
+                <li>Black Tea</li>
+                <li>White Tea</li>
+                <li class="treeview-caret">
+                  <button>Green Tea</button>
+                  <ul class="treeview-nested">
+                    <li>Sencha</li>
+                    <li>Gyokuro</li>
+                    <li>Matcha</li>
+                    <li>Pi Lo Chun</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

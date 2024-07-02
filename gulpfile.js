@@ -161,6 +161,18 @@ function loadData(cb) {
   contents = JSON.parse(fs.readFileSync('./src/json/contents.json', 'utf-8'));
   config.baseDir = __dirname;
 
+  for (let i = 0; i < contents.contents.length; i++) {
+    const content = contents.contents[i];
+    let child = content.contents;
+    if (content.type === 'category' && typeof child !== 'undefined' && child.length > 0) {
+      child.sort(function (a, b) {
+        if (a.id < b.id) return -1;
+        if (a.id > b.id) return 1;
+        return a.id > b.id;
+      });
+    }
+  }
+
   cb();
 }
 

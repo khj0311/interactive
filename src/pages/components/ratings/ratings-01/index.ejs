@@ -1,0 +1,31 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="ratings ratings--basic">
+      <legend class="ratings-title">Rating <strong class="ratings-title__number"></strong></legend>
+      <div>
+        <% for( let index = 1; index <= 5; index++ ) { %>
+        <input name="simple-controlled" class="ratings-radio blind" id="basic-value-<%= index %>" type="radio" value="<%= index %>" />
+        <label for="basic-value-<%= index %>" class="ratings-label">
+          <svg class="ratings-label__img">
+            <use xlink:href="/assets/images/icon-sprite.svg#icon-star-border" />
+          </svg>
+          <svg class="ratings-label__img ratings-label__fill">
+            <use xlink:href="/assets/images/icon-sprite.svg#icon-star" />
+          </svg>
+          <span class="blind"><%= index %> Star</span>
+        </label>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>

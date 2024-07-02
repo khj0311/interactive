@@ -1,0 +1,10 @@
+<% if (typeof data.contents !== 'undefined' && data.contents.length > 0) { %>
+<% for( let index = 0; index < data.contents.length; index++ ) { %>
+<% const contents = data.contents[index] %>
+<% const path = `./${contents.id}/index.ejs`; %>
+<%- include(path, {
+  config,
+  data: contents
+}) %>
+<% } %>
+<% } %>

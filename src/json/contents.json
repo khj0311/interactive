@@ -237,6 +237,39 @@
             }
           ],
           "panels": []
+        },
+        {
+          "name": "Ratings",
+          "id": "ratings",
+          "contents": [
+            {
+              "name": "Ratings Basic",
+              "id": "ratings-01",
+              "goals": ["클릭한 별 개수 만큼 rating", "<mark>ratings-title__number</mark> 에 해당 value 노출", "default는 3점, 최소 1점, 최대 5점"]
+            },
+            {
+              "name": "Ratings Toggle",
+              "id": "ratings-02",
+              "goals": [
+                "클릭한 별 개수 만큼 rating",
+                "<mark>ratings-title__number</mark> 에 해당 value 노출",
+                "default는 3점, 최소 1점, 최대 5점",
+                "클릭한 별에서 다시 클릭하면 value 0으로 세팅"
+              ]
+            },
+            {
+              "name": "Ratings Effect",
+              "id": "ratings-03",
+              "goals": [
+                "클릭한 별 개수 만큼 rating",
+                "<mark>ratings-title__number</mark> 에 해당 value 노출",
+                "default는 2점, 최소 1점, 최대 5점",
+                "클릭한 별에서 다시 클릭하면 value 0으로 세팅",
+                "mouseover, mouseleave 시 <mark>label</mark> element에 <mark>hover</mark> 클래스 추가, 삭제",
+                "mouseleave 시 마지막으로 클릭한 value 세팅"
+              ]
+            }
+          ]
         }
       ]
     },

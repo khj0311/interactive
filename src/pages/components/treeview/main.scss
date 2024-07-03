@@ -2,7 +2,7 @@
 @import '../../../common/scss/mixins/conversion';
 
 .component .treeview {
-  :is(&--basic) .treeview {
+  :is(&--basic) {
     position: relative;
     margin: 0 20px;
 

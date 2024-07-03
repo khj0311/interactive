@@ -1,5 +1,5 @@
 .component .tab {
-  :is(&--slider) .tab {
+  :is(&--slider) {
     position: relative;
     height: 500px;
 

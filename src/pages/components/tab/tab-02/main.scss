@@ -1,5 +1,5 @@
 .component .tab {
-  :is(&--effect) .tab {
+  :is(&--effect) {
     position: relative;
     height: 500px;
 

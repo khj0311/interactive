@@ -2,7 +2,7 @@
   opacity: 1;
 }
 .component .ratings {
-  :is(&--basic) .ratings {
+  :is(&--basic) {
     position: relative;
     cursor: pointer;
     width: 100%;

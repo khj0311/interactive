@@ -2,41 +2,41 @@
   opacity: 1;
 }
 .component .ratings {
-  &--toggle {
+  :is(&--toggle) {
     position: relative;
     cursor: pointer;
     width: 100%;
     margin: 0 20px;
-  }
 
-  :is(&--toggle) .ratings {
-    &-title {
-      margin-bottom: 15px;
-    }
-
-    &-label {
-      position: relative;
-      cursor: pointer;
-      user-select: none;
-
-      &__img {
-        width: 50px;
-        height: 50px;
+    .ratings {
+      &-title {
+        margin-bottom: 15px;
       }
 
-      &__fill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transform: scale(1.1);
-        transition: opacity 100ms, transform 500ms;
-      }
+      &-label {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
 
-      &.active {
-        .ratings-label__fill {
-          @extend %active-star;
-          transform: scale(1);
+        &__img {
+          width: 50px;
+          height: 50px;
+        }
+
+        &__fill {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transform: scale(1.1);
+          transition: opacity 100ms, transform 500ms;
+        }
+
+        &.active {
+          .ratings-label__fill {
+            @extend %active-star;
+            transform: scale(1);
+          }
         }
       }
     }

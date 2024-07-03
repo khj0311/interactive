@@ -2,51 +2,51 @@
 @import '../../../common/scss/mixins/conversion';
 
 .component .treeview {
-  &--basic {
+  :is(&--basic) .treeview {
     position: relative;
     margin: 0 20px;
-  }
 
-  :is(&--basic) .treeview {
-    &-btns {
-      margin-bottom: 20px;
+    .treeview {
+      &-btns {
+        margin-bottom: 20px;
 
-      &__btn {
-        padding: 4px 10px;
-        border: 1px solid $color-gray-level3;
-      }
-    }
-
-    &-caret {
-      & > span {
-        cursor: pointer;
-        user-select: none;
-      }
-
-      /* Hide the nested list */
-      .treeview {
-        &-nested {
-          display: none;
-          padding-inline-start: 24px;
+        &__btn {
+          padding: 4px 10px;
+          border: 1px solid $color-gray-level3;
         }
       }
 
-      &.active {
-        /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+      &-caret {
+        & > span {
+          cursor: pointer;
+          user-select: none;
+        }
+
+        /* Hide the nested list */
+        .treeview {
+          &-nested {
+            display: none;
+            padding-inline-start: 24px;
+          }
+        }
+
+        &.active {
+          /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+          &::before {
+            transform: rotate(90deg);
+          }
+
+          & > .treeview-nested {
+            display: block;
+          }
+        }
+
         &::before {
-          transform: rotate(90deg);
+          content: '\25B6';
+          color: black;
+          display: inline-block;
+          margin-right: 6px;
         }
-
-        & > .treeview-nested {
-          display: block;
-        }
-      }
-
-      &::before {
-        content: '\25B6';
-        color: black;
-        display: inline-block;
-        margin-right: 6px;
       }
     }
   }

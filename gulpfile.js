@@ -4,6 +4,7 @@ const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
 const ejs = require('gulp-ejs');
 const scss = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const htmlbeautify = require('gulp-html-beautify');
@@ -122,8 +123,13 @@ async function buildComponentCSS(cb, data = contents) {
 
     if (content.type !== 'category') {
       src(`./src/pages${path}/main.scss`, { allowEmpty: true })
-        .pipe(scss(scssOptions).on('error', errorHandler))
         .pipe(concat('main.css'))
+        .pipe(scss(scssOptions).on('error', errorHandler))
+        .pipe(
+          autoprefixer({
+            overrideBrowserslist: ['last 2 versions', 'not ie <= 11'],
+          })
+        )
         .pipe(dest(`./public${path}`))
         .pipe(browserSync.reload({ stream: true }));
     }
@@ -134,8 +140,13 @@ async function buildComponentCSS(cb, data = contents) {
 
 async function buildCommonCSS(cb) {
   src(['./src/common/scss/**.scss', './src/layout/**/**.scss'], { allowEmpty: true })
-    .pipe(scss(scssOptions).on('error', errorHandler))
     .pipe(concat('common.css'))
+    .pipe(scss(scssOptions).on('error', errorHandler))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ['last 2 versions', 'not ie <= 11'],
+      })
+    )
     .pipe(dest(`./public/common/css`))
     .pipe(browserSync.reload({ stream: true }));
 

@@ -2,7 +2,7 @@
 @import '../../../common/scss/mixins/conversion';
 
 .component .carousel {
-  &--tab {
+  :is(&--tab) {
     overflow: hidden;
     position: relative;
     max-width: 1920px;
@@ -83,244 +83,243 @@
         pointer-events: auto;
       }
     }
-  }
 
-  :is(&--tab) .carousel {
-    &-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    &-bg {
-      position: absolute;
-      left: 0;
-      bottom: -60vh;
-      z-index: 0;
-      width: 100%;
-      height: 60vh;
-      background-color: #fff;
-    }
-
-    &-headline {
-      transition: color 0.4s ease-out;
-    }
-
-    &-br {
-      &--mo {
-        display: none;
-      }
-    }
-
-    &-animals {
-      @include vw-pc(width, 652);
-      margin: 0 auto;
-      @include vw-pc(padding-top, 200);
-
-      &__headline {
-        font-size: 39px;
-        font-size: 2.70833vw;
-        line-height: 1.20513;
-        font-family: sssB, 'sans serif';
-        letter-spacing: -0.01em;
-        color: #fff;
-      }
-
-      &__carousel {
+    .carousel {
+      &-wrap {
         position: relative;
+        z-index: 1;
+        max-width: 1440px;
         margin: 0 auto;
-        @include vw-pc(margin-top, 138);
-        @include vw-pc(padding-top, 20);
-
-        &--paused {
-          & .carousel-control__icon--pause {
-            display: none;
-          }
-          & .carousel-control__icon--play {
-            display: block;
-          }
-        }
       }
 
-      &__bg {
+      &-bg {
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        @include vw-pc(width, 480);
-        @include vw-pc(height, 480);
-
-        & img {
-          width: 100%;
-        }
-      }
-    }
-
-    &-tab {
-      z-index: 10;
-      position: absolute;
-      @include vw-pc(top, -28);
-      left: 50%;
-      transform: translateX(-50%);
-
-      & li {
-        position: absolute;
-        pointer-events: none;
-
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4) {
-          right: 100%;
-          text-align: left;
-        }
-
-        &:nth-child(5),
-        &:nth-child(6),
-        &:nth-child(7),
-        &:nth-child(8) {
-          left: 100%;
-          text-align: right;
-        }
-
-        &:nth-child(4n + 2) {
-          @include vw-pc(top, 140);
-        }
-
-        &:nth-child(4n + 3) {
-          @include vw-pc(top, 296);
-        }
-
-        &:nth-child(4n + 4) {
-          @include vw-pc(top, 436);
-        }
-
-        &:nth-child(1),
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(8) {
-          @include vw-pc(width, 332);
-        }
-
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(6),
-        &:nth-child(7) {
-          @include vw-pc(width, 402);
-        }
-      }
-
-      &__button {
-        position: relative;
-        display: inline-block;
-        @include vw-pc(width, 100);
-        @include vw-pc(height, 100);
-        vertical-align: top;
-        pointer-events: auto;
-        background: 0;
-        cursor: pointer;
-
-        &:focus .carousel-tab__icon--active,
-        &:hover .carousel-tab__icon--active {
-          opacity: 1;
-        }
-      }
-
-      &__icon {
-        display: block;
+        left: 0;
+        bottom: -60vh;
+        z-index: 0;
         width: 100%;
-        height: 100%;
+        height: 60vh;
+        background-color: #fff;
+      }
 
-        & img {
-          width: 100%;
+      &-headline {
+        transition: color 0.4s ease-out;
+      }
+
+      &-br {
+        &--mo {
+          display: none;
+        }
+      }
+
+      &-animals {
+        @include vw-pc(width, 652);
+        margin: 0 auto;
+        @include vw-pc(padding-top, 200);
+
+        &__headline {
+          font-size: 39px;
+          font-size: 2.70833vw;
+          line-height: 1.20513;
+          letter-spacing: -0.01em;
+          color: #fff;
         }
 
-        &--active {
+        &__carousel {
+          position: relative;
+          margin: 0 auto;
+          @include vw-pc(margin-top, 138);
+          @include vw-pc(padding-top, 20);
+
+          &--paused {
+            & .carousel-control__icon--pause {
+              display: none;
+            }
+            & .carousel-control__icon--play {
+              display: block;
+            }
+          }
+        }
+
+        &__bg {
           position: absolute;
           top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0;
-          transform: scale(1);
-          transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          left: 50%;
+          transform: translateX(-50%);
+          @include vw-pc(width, 480);
+          @include vw-pc(height, 480);
+
+          & img {
+            width: 100%;
+          }
         }
       }
 
-      &__button.is-active .carousel-tab__icon--active {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-    }
+      &-tab {
+        z-index: 10;
+        position: absolute;
+        @include vw-pc(top, -28);
+        left: 50%;
+        transform: translateX(-50%);
 
-    &-control__wrap {
-      z-index: 10;
-      position: absolute;
-      @include vw-pc(top, 440);
-      left: 50%;
-      transform: translateX(-50%);
-      @include vw-pc(width, 30);
-      @include vw-pc(height, 30);
-    }
+        & li {
+          position: absolute;
+          pointer-events: none;
 
-    &-control {
-      display: block;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      background: 0;
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            right: 100%;
+            text-align: left;
+          }
 
-      &:focus {
-        display: block;
-      }
+          &:nth-child(5),
+          &:nth-child(6),
+          &:nth-child(7),
+          &:nth-child(8) {
+            left: 100%;
+            text-align: right;
+          }
 
-      & svg {
-        width: 100%;
-        height: 100%;
-        cursor: pointer !important;
-      }
+          &:nth-child(4n + 2) {
+            @include vw-pc(top, 140);
+          }
 
-      &__icon {
-        width: 100%;
-        height: 100%;
-      }
+          &:nth-child(4n + 3) {
+            @include vw-pc(top, 296);
+          }
 
-      &__icon--play {
-        display: none;
-      }
-    }
+          &:nth-child(4n + 4) {
+            @include vw-pc(top, 436);
+          }
 
-    &-panel {
-      @include vw-pc(width, 440);
-      margin: 0 auto;
+          &:nth-child(1),
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(8) {
+            @include vw-pc(width, 332);
+          }
 
-      &__image {
-        width: 100%;
-        @include vw-pc(height, 440);
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(6),
+          &:nth-child(7) {
+            @include vw-pc(width, 402);
+          }
+        }
 
-        & img {
+        &__button {
+          position: relative;
+          display: inline-block;
+          @include vw-pc(width, 100);
+          @include vw-pc(height, 100);
+          vertical-align: top;
+          pointer-events: auto;
+          background: 0;
+          cursor: pointer;
+
+          &:focus .carousel-tab__icon--active,
+          &:hover .carousel-tab__icon--active {
+            opacity: 1;
+          }
+        }
+
+        &__icon {
+          display: block;
           width: 100%;
+          height: 100%;
+
+          & img {
+            width: 100%;
+          }
+
+          &--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transform: scale(1);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
+
+        &__button.is-active .carousel-tab__icon--active {
+          opacity: 1;
+          transform: scale(1.1);
         }
       }
 
-      &__text {
-        @include vw-pc(margin-top, 32);
-        text-align: center;
+      &-control__wrap {
+        z-index: 10;
+        position: absolute;
+        @include vw-pc(top, 440);
+        left: 50%;
+        transform: translateX(-50%);
+        @include vw-pc(width, 30);
+        @include vw-pc(height, 30);
       }
 
-      &__headline {
-        color: #fff;
-        @include vw-pc(font-size, 26);
-        line-height: 1.62;
-        font-weight: bold;
+      &-control {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background: 0;
+
+        &:focus {
+          display: block;
+        }
+
+        & svg {
+          width: 100%;
+          height: 100%;
+          cursor: pointer !important;
+        }
+
+        &__icon {
+          width: 100%;
+          height: 100%;
+        }
+
+        &__icon--play {
+          display: none;
+        }
       }
 
-      &__description {
-        color: #fff;
-        @include vw-pc(margin, 12 50 0);
-        @include vw-pc(font-size, 17);
-        line-height: 1.58;
+      &-panel {
+        @include vw-pc(width, 440);
+        margin: 0 auto;
+
+        &__image {
+          width: 100%;
+          @include vw-pc(height, 440);
+
+          & img {
+            width: 100%;
+          }
+        }
+
+        &__text {
+          @include vw-pc(margin-top, 32);
+          text-align: center;
+        }
+
+        &__headline {
+          color: #fff;
+          @include vw-pc(font-size, 26);
+          line-height: 1.62;
+          font-weight: bold;
+        }
+
+        &__description {
+          color: #fff;
+          @include vw-pc(margin, 12 50 0);
+          @include vw-pc(font-size, 17);
+          line-height: 1.58;
+        }
       }
     }
   }
@@ -328,59 +327,59 @@
 
 @include desktop {
   .component .carousel {
-    &--tab {
+    :is(&--tab) {
       padding-bottom: 200px;
-    }
 
-    :is(&--tab) .carousel {
-      &-animals {
-        width: 652px;
-        padding-top: 200px;
+      .carousel {
+        &-animals {
+          width: 652px;
+          padding-top: 200px;
 
-        &__carousel {
-          margin-top: 138px;
-          padding-top: 20px;
+          &__carousel {
+            margin-top: 138px;
+            padding-top: 20px;
+          }
+
+          &__bg {
+            width: 480px;
+            height: 480px;
+          }
         }
 
-        &__bg {
-          width: 480px;
-          height: 480px;
-        }
-      }
+        &-tab {
+          top: -28px;
 
-      &-tab {
-        top: -28px;
-
-        &__button {
-          width: 100px;
-          height: 100px;
-        }
-      }
-
-      &-control__wrap {
-        top: 440px;
-        width: 30px;
-        height: 30px;
-      }
-
-      &-panel {
-        width: 440px;
-
-        &__image {
-          height: 440px;
+          &__button {
+            width: 100px;
+            height: 100px;
+          }
         }
 
-        &__text {
-          margin-top: 32px;
+        &-control__wrap {
+          top: 440px;
+          width: 30px;
+          height: 30px;
         }
 
-        &__headline {
-          font-size: 26px;
-        }
+        &-panel {
+          width: 440px;
 
-        &__description {
-          margin: 12px 50px 0;
-          font-size: 17px;
+          &__image {
+            height: 440px;
+          }
+
+          &__text {
+            margin-top: 32px;
+          }
+
+          &__headline {
+            font-size: 26px;
+          }
+
+          &__description {
+            margin: 12px 50px 0;
+            font-size: 17px;
+          }
         }
       }
     }
@@ -389,118 +388,118 @@
 
 @include mobile {
   .component .carousel {
-    &--tab {
+    :is(&--tab) {
       @include vw-mo(padding, 0 76.8 213.33333);
-    }
 
-    :is(&--tab) .carousel {
-      &-bg {
-        bottom: -50vh;
-        height: 40vh;
-      }
-
-      &-animals {
-        width: 100%;
-        @include vw-mo(padding-top, 213.33333);
-
-        &__headline {
-          @include vw-mo(font-size, 59.73333);
-          line-height: 1.21;
+      .carousel {
+        &-bg {
+          bottom: -50vh;
+          height: 40vh;
         }
 
-        &__carousel {
-          @include vw-mo(margin-top, 277.33333);
-          @include vw-mo(padding-top, 21.33333);
-        }
+        &-animals {
+          width: 100%;
+          @include vw-mo(padding-top, 213.33333);
 
-        &__bg {
-          transform: translateX(-50%);
-          @include vw-mo(width, 512);
-          @include vw-mo(height, 512);
-        }
-      }
+          &__headline {
+            @include vw-mo(font-size, 59.73333);
+            line-height: 1.21;
+          }
 
-      &-tab {
-        @include vw-mo(top, 241.06667);
-        & li {
-          &:nth-child(n + 1):nth-child(-n + 4) {
-            top: auto;
-            bottom: 100%;
+          &__carousel {
+            @include vw-mo(margin-top, 277.33333);
+            @include vw-mo(padding-top, 21.33333);
           }
-          &:nth-child(n + 5):nth-child(-n + 9) {
-            top: 100%;
-            display: flex;
-            align-items: flex-end;
-            left: auto;
-          }
-          &:nth-child(1),
-          &:nth-child(2),
-          &:nth-child(5),
-          &:nth-child(6) {
-            right: 100%;
-            text-align: left;
-          }
-          &:nth-child(3),
-          &:nth-child(4),
-          &:nth-child(7),
-          &:nth-child(8) {
-            left: 100%;
-            text-align: right;
-            justify-content: flex-end;
-          }
-          &:nth-child(1),
-          &:nth-child(4),
-          &:nth-child(5),
-          &:nth-child(8) {
-            @include vw-mo(width, 309.33333);
-            @include vw-mo(height, 345.6);
-          }
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(6),
-          &:nth-child(7) {
-            @include vw-mo(width, 145.06667);
-            @include vw-mo(height, 433.06667);
+
+          &__bg {
+            transform: translateX(-50%);
+            @include vw-mo(width, 512);
+            @include vw-mo(height, 512);
           }
         }
-        &__button {
-          @include vw-mo(width, 117.33333);
-          @include vw-mo(height, 117.33333);
-        }
-        &__button:focus &__icon--active,
-        &__button:hover &__icon--active {
-          opacity: 0;
-        }
-        &__button.is-active &__icon--active {
-          transform: none;
-          opacity: 1;
-        }
-      }
 
-      &-control__wrap {
-        @include vw-mo(top, 469.33333);
-        @include vw-mo(width, 64);
-        @include vw-mo(height, 64);
-      }
+        &-tab {
+          @include vw-mo(top, 241.06667);
+          & li {
+            &:nth-child(n + 1):nth-child(-n + 4) {
+              top: auto;
+              bottom: 100%;
+            }
+            &:nth-child(n + 5):nth-child(-n + 9) {
+              top: 100%;
+              display: flex;
+              align-items: flex-end;
+              left: auto;
+            }
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(5),
+            &:nth-child(6) {
+              right: 100%;
+              text-align: left;
+            }
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(7),
+            &:nth-child(8) {
+              left: 100%;
+              text-align: right;
+              justify-content: flex-end;
+            }
+            &:nth-child(1),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(8) {
+              @include vw-mo(width, 309.33333);
+              @include vw-mo(height, 345.6);
+            }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(6),
+            &:nth-child(7) {
+              @include vw-mo(width, 145.06667);
+              @include vw-mo(height, 433.06667);
+            }
+          }
+          &__button {
+            @include vw-mo(width, 117.33333);
+            @include vw-mo(height, 117.33333);
+          }
+          &__button:focus &__icon--active,
+          &__button:hover &__icon--active {
+            opacity: 0;
+          }
+          &__button.is-active &__icon--active {
+            transform: none;
+            opacity: 1;
+          }
+        }
 
-      &-panel {
-        @include vw-mo(width, 597.33333);
-        &__image {
-          @include vw-mo(width, 469.33333);
-          @include vw-mo(height, 469.33333);
-          margin: 0 auto;
+        &-control__wrap {
+          @include vw-mo(top, 469.33333);
+          @include vw-mo(width, 64);
+          @include vw-mo(height, 64);
         }
-        &__text {
-          @include vw-mo(margin-top, 258.13333);
-        }
-        &__headline {
-          @include vw-mo(font-size, 38.4);
-          line-height: 1.17;
-        }
-        &__description {
-          @include vw-mo(margin, 19.2 0 0);
-          @include vw-mo(font-size, 32);
-          line-height: 1.53;
+
+        &-panel {
+          @include vw-mo(width, 597.33333);
+          &__image {
+            @include vw-mo(width, 469.33333);
+            @include vw-mo(height, 469.33333);
+            margin: 0 auto;
+          }
+          &__text {
+            @include vw-mo(margin-top, 258.13333);
+          }
+          &__headline {
+            @include vw-mo(font-size, 38.4);
+            line-height: 1.17;
+          }
+          &__description {
+            @include vw-mo(margin, 19.2 0 0);
+            @include vw-mo(font-size, 32);
+            line-height: 1.53;
+          }
         }
       }
     }

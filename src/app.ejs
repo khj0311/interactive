@@ -19,11 +19,7 @@
 
 <body>
   <div id="root">
-    <%- include(`./layout/interface/index.ejs`, {
-      config,
-      data
-    }) %>
-    <%- include(`./layout/sidebar/index.ejs`, { root }) %>
+    <%- include(`./layout/interface/index.ejs`, { root }) %>
     <div class="interactive">
       <header class="header">
         <h1 class="header-title"><%= data.name %></h1>

@@ -1,0 +1,29 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="sequence sequence--image">
+      <div class="sequence-wrap">
+        <div class="sequence-content">
+          <div class="sequence-text">
+            <h2 class="sequence-eyebrow">EXPLORATION</h2>
+            <p class="sequence-headline">Your guide to adventure</p>
+          </div>
+          <div class="sequence-visual">
+            <div class="sequence-visual__inner">
+              <img src="/assets/images/blank.gif" class="js-lazy-img js-res-img" data-src-pc="/assets/images/image-sequence/sequence-pc_end.jpg" data-src-tablet="/assets/images/image-sequence/sequence-pc_end.jpg" data-src-mobile="/assets/images/image-sequence/sequence-mo_end.jpg" alt="Two Galaxy Watch5 Pro interlocked with each other. The black Watch5 Pro on the left is displaying the 'My workout' interface on the watch face, while the gray Watch5 Pro on the right displays a heart monitor on the watch face." />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

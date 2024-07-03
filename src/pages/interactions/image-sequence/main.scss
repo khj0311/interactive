@@ -1,0 +1,165 @@
+@import '../../../common/scss/mixins/conversion';
+
+.component .sequence {
+  :is(&--image) {
+    margin: 100vh 0;
+
+    .sequence {
+      &-wrap {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 120px 0 0;
+        padding: 8.33333vw 0 0;
+        background-color: #010101;
+        overflow: hidden;
+      }
+
+      &-content {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      &-text {
+        position: relative;
+        @include vw-pc(width, 1200);
+        color: #fff;
+        margin: 0 auto;
+        z-index: 4;
+      }
+
+      &-eyebrow {
+        @include vw-pc(margin-bottom, 48);
+        @include vw-pc(font-size, 14);
+        letter-spacing: 0.22em;
+      }
+
+      &-headline {
+        @include vw-pc(max-width, 650);
+        @include vw-pc(font-size, 100);
+        line-height: 1.127;
+        letter-spacing: normal;
+      }
+
+      &-visual {
+        position: relative;
+        left: 50%;
+        @include vw-pc(width, 1368);
+        @include vw-pc(margin-top, -135);
+        @include vw-pc(margin-left, -684);
+
+        &__inner {
+          position: relative;
+          padding-bottom: 80.70175%;
+          overflow: hidden;
+
+          & canvas {
+            position: absolute;
+            width: 101%;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          & img {
+            position: absolute;
+            width: 101%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 30%;
+            width: 100vw;
+            height: 1px;
+            background: green;
+            z-index: 100;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 70%;
+            width: 100vw;
+            height: 1px;
+            background: red;
+            z-index: 100;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .sequence {
+    :is(&--image) {
+      .sequence {
+        &-text {
+          width: 1200px;
+        }
+        &-eyebrow {
+          margin-bottom: 48px;
+        }
+        &-headline {
+          max-width: 650px;
+        }
+        &-visual {
+          width: 1368px;
+          margin-top: -135px;
+          margin-left: -684px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .sequence {
+    :is(&--image) {
+      .sequence {
+        &-wrap {
+          @include vw-mo(padding, 106.66667 0 0);
+        }
+
+        &-content {
+          width: 100%;
+        }
+
+        &-text {
+          width: 100%;
+          @include vw-mo(padding, 0 93.86667);
+        }
+
+        &-headline {
+          @include vw-mo(max-width, 424.53333);
+          @include vw-mo(padding-bottom, 34.13333);
+        }
+
+        &-visual {
+          width: 100%;
+          @include vw-mo(margin-top, -196.26667);
+          left: 0;
+          margin-left: 0;
+
+          &__inner {
+            width: 100%;
+            padding-bottom: 173.61111%;
+
+            & img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -276,7 +276,22 @@
     {
       "type": "category",
       "name": "Interactions",
-      "id": "interactions"
+      "id": "interactions",
+      "contents": [
+        {
+          "name": "Image Sequence",
+          "id": "image-sequence",
+          "goals": [
+            "sequence 이미지는 총 44장 (PC / MO 각각 0~43)",
+            "총 44장의 이미지가 모두 로드 되었을때 canvas를 동적 삽입하여 canvas에 이미지 draw",
+            "window bottom 기준 70% 도달 시 sequence 재생",
+            "sequence 재생 완료 후 _end 이미지 노출 / canvas 미노출",
+            "영역 벗어날 시 sequence 0번째로 초기화"
+          ],
+          "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch5-pro/#exploration",
+          "controls": ["test"]
+        }
+      ]
     }
   ]
 }

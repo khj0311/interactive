@@ -1,32 +1,33 @@
-(function() {
+(function () {
   window.INTERACTIVE = window.INTERACTIVE || {};
 
   class ImageSequence {
-    constructor(featureElement, params) {
-      const defaultParams = {
-        targetElement: null,
-        canvasElement: null,
-        imageElement: '.sequence-image',
+    constructor(section, params = { opts: {}, selector: {} }) {
+      this.opts = {
+        currDevice: '',
+        prevDevice: '',
         startCount: 0,
         endCount: 0,
         loadOffset: 0,
-        playOffset: 0.5
+        playOffset: 0.5,
+        playInterval: null,
+        loaded: false,
+        ...params.opts,
       };
 
-      this.featureElement = featureElement ? document.querySelector(featureElement) : document;
-      this.params = { ...defaultParams, ...params };
+      this.selector = {
+        section,
+        targetElement: '',
+        canvasElement: '',
+        imageElement: '',
+        ...params.selector,
+      };
 
-      this.options = {
-        device: 'desktop',
-        _device: '',
-        width: 0,
-        height: 0,
-        canvas: null,
-        context: null,
-        sequenceSrc: [],
-        sequenceImages: [],
-        interval: null,
-        loaded: false
+      this.el = {
+        section: document.querySelector(this.selector.section) || null,
+        targetElement: null,
+        canvasElement: null,
+        imageElement: null,
       };
 
       this.events = {
@@ -34,9 +35,24 @@
         resize: this.onResizeHandler.bind(this),
         scroll: {
           load: this.onScrollLoadSequence.bind(this),
-          play: this.onScrollPlaySequence.bind(this)
-        }
+          play: this.onScrollPlaySequence.bind(this),
+        },
       };
+
+      this.sequence = {
+        canvas: null,
+        context: null,
+        width: 0,
+        height: 0,
+        sources: [],
+        images: [],
+      };
+
+      this.init();
+    }
+
+    init() {
+      if (this.el.section === null) return;
 
       this.setElements();
       this.setCanvas();
@@ -44,29 +60,20 @@
     }
 
     setElements() {
-      if (this.params.targetElement !== null && typeof this.params.targetElement === 'string') {
-        this.params.targetElement = this.featureElement.querySelector(this.params.targetElement);
-      }
+      this.el.targetElement = this.el.section.querySelector(this.selector.targetElement);
+      this.el.imageElement = this.el.section.querySelector(this.selector.imageElement);
 
-      if (this.params.imageElement !== null && typeof this.params.imageElement === 'string') {
-        this.params.imageElement = this.featureElement.querySelector(this.params.imageElement);
-      }
-
-      if (this.params.canvasElement !== null) {
-        if (typeof this.params.canvasElement === 'string') {
-          this.params.canvasElement = this.featureElement.querySelector(this.params.canvasElement);
-        }
+      if (this.selector.canvasElement !== '') {
+        this.el.canvasElement = this.el.section.querySelector(this.selector.canvasElement);
       } else {
-        this.params.canvasElement = document.createElement('canvas');
+        this.el.canvasElement = document.createElement('canvas');
       }
 
-      this.options.canvas = this.params.canvasElement;
-      this.params.targetElement.appendChild(this.options.canvas);
+      this.sequence.canvas = this.el.canvasElement;
+      this.el.targetElement.appendChild(this.sequence.canvas);
     }
 
     attachEvents() {
-      // this.events.scroll.load();
-
       window.addEventListener('load', this.events.load);
       window.addEventListener('resize', this.events.resize);
       window.addEventListener('scroll', this.events.scroll.load);
@@ -80,18 +87,18 @@
     }
 
     onResizeHandler() {
-      if (window.innerWidth > 1023) this.options.device = 'desktop';
-      else if (window.innerWidth <= 1023 && window.innerWidth > 767) this.options.device = 'tablet';
-      else this.options.device = 'mobile';
+      if (window.innerWidth > 1023) this.opts.currDevice = 'desktop';
+      else if (window.innerWidth <= 1023 && window.innerWidth > 767) this.opts.currDevice = 'tablet';
+      else this.opts.currDevice = 'mobile';
 
-      if (this.options.device !== this.options._device) {
+      if (this.opts.currDevice !== this.opts.prevDevice) {
         this.onResponsiveChange();
-        this.options._device = this.options.device;
+        this.opts.prevDevice = this.opts.currDevice;
       }
     }
 
     onResponsiveChange() {
-      this.options.sequenceImages = [];
+      this.sequence.images = [];
       this.setCanvas();
       this.loadSequence();
     }
@@ -100,10 +107,10 @@
       const winOffsetTop = window.scrollY;
       const winOffsetBottom = winOffsetTop + window.innerHeight;
 
-      const targetOffsetTop = winOffsetTop + this.params.targetElement.getBoundingClientRect().top;
-      const targetOffsetBottom = targetOffsetTop + this.params.targetElement.clientHeight;
+      const targetOffsetTop = winOffsetTop + this.el.targetElement.getBoundingClientRect().top;
+      const targetOffsetBottom = targetOffsetTop + this.el.targetElement.clientHeight;
 
-      if (winOffsetBottom > targetOffsetTop - window.innerHeight * this.params.loadOffset && winOffsetTop < targetOffsetBottom + window.innerHeight * this.params.loadOffset) {
+      if (winOffsetBottom > targetOffsetTop - window.innerHeight * this.opts.loadOffset && winOffsetTop < targetOffsetBottom + window.innerHeight * this.opts.loadOffset) {
         this.loadSequence();
         window.removeEventListener('scroll', this.events.scroll.load);
       }
@@ -111,19 +118,23 @@
 
     onScrollPlaySequence() {
       const params = {
-        activeType: 'twoWay',
-        targetSelector: '.mtg-comp-exploration__visual-inner',
-        windowOffset: 1,
-        targetOffset: 0.7,
-        activeCallback: () => {
-          this.playSequence();
+        opts: {
+          activeType: 'twoWay',
+          windowOffset: 1,
+          targetOffset: 0.7,
+          activeCallback: () => {
+            this.playSequence();
+          },
+          detectiveCallback: () => {
+            this.setDefaultImage();
+          },
         },
-        detectiveCallback: () => {
-          this.setDefaultImage();
-        }
+        selector: {
+          targetElement: this.selector.targetElement,
+        },
       };
 
-      new INTERACTIVE.ScrollTrigger('.mtg-comp-exploration', params);
+      new INTERACTIVE.ScrollTrigger(this.selector.section, params);
     }
 
     getSequenceSrc(image) {
@@ -142,74 +153,76 @@
         }
       }
 
+      console.log(dataImageSrc);
       return image.getAttribute(dataImageSrc);
     }
 
     setDefaultImage() {
       const firstImage = new Image();
-      firstImage.src = this.options.sequenceSrc[0];
+      firstImage.src = this.sequence.sources[0];
       firstImage.addEventListener('load', () => {
-        this.options.canvas.width = firstImage.naturalWidth;
-        this.options.canvas.height = firstImage.naturalHeight;
-        this.options.width = firstImage.naturalWidth;
-        this.options.height = firstImage.naturalHeight;
-        this.options.context.drawImage(firstImage, 0, 0, this.options.width, this.options.height);
+        this.sequence.canvas.width = firstImage.naturalWidth;
+        this.sequence.canvas.height = firstImage.naturalHeight;
+        this.sequence.width = firstImage.naturalWidth;
+        this.sequence.height = firstImage.naturalHeight;
+        this.sequence.context.drawImage(firstImage, 0, 0, this.sequence.width, this.sequence.height);
       });
     }
 
     setCanvas() {
-      this.options.context = this.options.canvas.getContext('2d');
+      this.sequence.context = this.sequence.canvas.getContext('2d');
 
-      this.options.sequenceSrc = [];
-      const imageElement = this.params.imageElement;
+      this.sequence.sources = [];
+      const imageElement = this.el.imageElement;
       const imageSrc = this.getSequenceSrc(imageElement).replace('_end', '');
 
-      for (let i = this.params.startCount; i <= this.params.endCount; i++) {
+      for (let i = this.opts.startCount; i <= this.opts.endCount; i++) {
         let sequenceSrc = '';
         if (imageSrc.indexOf('.jpg') > -1) {
           sequenceSrc = imageSrc.replace('.jpg', `_${i}.jpg`);
         } else if (imageSrc.indexOf('.png') > -1) {
           sequenceSrc = imageSrc.replace('.png', `_${i}.png`);
         }
-        this.options.sequenceSrc.push(sequenceSrc);
+        this.sequence.sources.push(sequenceSrc);
       }
 
       this.setDefaultImage();
     }
 
     loadSequence() {
-      if (this.options.sequenceImages.length > 0) return;
+      if (this.sequence.images.length > 0) return;
 
       let loadCount = 0;
-      const onLoadImage = e => {
+      const onLoadImage = (e) => {
         const image = e.currentTarget;
-        if (loadCount < this.options.sequenceSrc.length - 1) {
+        if (loadCount < this.sequence.sources.length - 1) {
           loadCount++;
           image.removeEventListener('load', onLoadImage);
         } else {
-          this.options.loaded = true;
+          this.opts.loaded = true;
         }
       };
 
-      for (let i = 0; i < this.options.sequenceSrc.length; i++) {
+      for (let i = 0; i < this.sequence.sources.length; i++) {
         const image = new Image();
-        image.src = this.options.sequenceSrc[i];
+        image.src = this.sequence.sources[i];
 
         image.addEventListener('load', onLoadImage);
-        this.options.sequenceImages.push(image);
+        this.sequence.images.push(image);
       }
     }
 
     playSequence() {
       let count = 0;
-      clearInterval(this.options.interval);
-      this.options.interval = setInterval(() => {
-        if (!this.options.loaded) return;
-        if (count < this.options.sequenceImages.length) {
-          this.options.context.drawImage(this.options.sequenceImages[count], 0, 0, this.options.width, this.options.height);
+      console.log(this.sequence.images);
+      clearInterval(this.opts.playInterval);
+      this.opts.playInterval = setInterval(() => {
+        if (!this.opts.loaded) return;
+        if (count < this.sequence.images.length) {
+          this.sequence.context.drawImage(this.sequence.images[count], 0, 0, this.sequence.width, this.sequence.height);
           count++;
         } else {
-          clearInterval(this.options.interval);
+          clearInterval(this.opts.playInterval);
         }
       }, 30);
     }

@@ -129,15 +129,15 @@
                 {
                   "title": "Better scratch resistance with Corning® Gorilla® Armor",
                   "description": "Corning® Gorilla® Armor helps protect your screen from scratches to keep your device looking beautiful.",
-                  "imageSrcPc": "accordion02-content-image-pc01.jpg",
-                  "imageSrcMo": "accordion02-content-image-mo01.jpg",
+                  "imageSrcPc": "accordion02-content-image01-pc.jpg",
+                  "imageSrcMo": "accordion02-content-image01-mo.jpg",
                   "imageAlt": "A transparent layer representing Corning® Gorilla® Armor hovers over Galaxy S24 Ultra."
                 },
                 {
                   "title": "Water and dust resistant. Worry free",
                   "description": "Don't let water dampen your spirits. Galaxy S24 Ultra is IP68 water and dust resistant — so you're ready for every adventure, puddles and all.",
-                  "imageSrcPc": "accordion02-content-image-pc02.jpg",
-                  "imageSrcMo": "accordion02-content-image-mo02.jpg",
+                  "imageSrcPc": "accordion02-content-image02-pc.jpg",
+                  "imageSrcMo": "accordion02-content-image02-mo.jpg",
                   "imageAlt": "Water splashes against Galaxy S24 Ultra."
                 }
               ]
@@ -168,7 +168,7 @@
           "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#sleep-coaching",
           "controls": ["test"],
 
-          "title": "Find the sleep<br class='carousel-br--mo' />symbol that <br />matches your<br class='carousel-br--mo' /> sleep type",
+          "title": "Find the sleep<br class='interactive-br__mo' />symbol that <br />matches your<br class='interactive-br__mo' /> sleep type",
 
           "tabs": [
             {
@@ -290,6 +290,82 @@
           ],
           "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch5-pro/#exploration",
           "controls": ["test"]
+        },
+        {
+          "name": "Scroll Parallax",
+          "id": "scroll-parallax",
+          "contents": [
+            {
+              "name": "Scroll Parallax Basic 01",
+              "id": "scroll-parallax-01",
+              "goals": [
+                "TweenMax 사용해서 Easing 효과로 이미지가 아래에서 위로 올라오는 애니메이션 생성",
+                "Start Point ==> Window Bottom과 Target Top이 맞닿는 지점 (Red Line)",
+                "End Point ==> Window Top과 Target Bottom이 맞닿는 지점 (Blue Line)",
+                "Parallax TransformY 범위 : <strong>0 ~ -15%</strong>"
+              ],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#spo2",
+
+              "title": "BLOOD OXYGEN",
+              "headline": "Measure blood<br class='interactive-br__pc' /> oxygen levels<br class='interactive-br__pc' /> from your wrist",
+              "description": "Built-in blood oxygen measurement on Galaxy Watch4 lets you check the amounts of oxygen in your bloodstream at any time. Oxygen saturation is directly linked to physical performance, so monitoring your blood oxygen can help you maintain your health.",
+              "imageSrc": "parallax01-device-image.jpg",
+              "imageAlt": "Black Galaxy Watch4 displays oxygen saturation and BPM measurements."
+            },
+            {
+              "name": "Scroll Parallax Basic 02",
+              "id": "scroll-parallax-02",
+              "goals": [
+                "TweenMax 사용해서 Easing 효과로 이미지가 아래에서 위로 올라오는 애니메이션 생성",
+                "Start Point ==> Window Bottom과 Target Top이 맞닿는 지점 (Red Line)",
+                "End Point ==> Window Top과 Target Bottom이 맞닿는 지점 (Blue Line)",
+                "Parallax TransformY 범위 : <strong>0 ~ -15%</strong>"
+              ],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#spo2",
+
+              "title": "BLOOD OXYGEN",
+              "headline": "Measure blood<br class='interactive-br__pc' /> oxygen levels<br class='interactive-br__pc' /> from your wrist",
+              "description": "Built-in blood oxygen measurement on Galaxy Watch4 lets you check the amounts of oxygen in your bloodstream at any time. Oxygen saturation is directly linked to physical performance, so monitoring your blood oxygen can help you maintain your health.",
+              "imageSrc": "parallax01-device-image.jpg",
+              "imageAlt": "Black Galaxy Watch4 displays oxygen saturation and BPM measurements."
+            },
+            {
+              "name": "Scroll Parallax Each",
+              "id": "scroll-parallax-03",
+              "goals": [
+                "각각 이미지의 크기 및 위치에 맞게 원근감 표현을 위한 parallax 구현",
+                "원근감 표현을 위해 위/아래 애니메이션 구현은 개발자의 의도에 따름",
+                "정방향, 역방향 -> 애니메이션 실행의 구간 한계 두어야 함"
+              ],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#wearos",
+
+              "headline": "Amazing alone. Better together",
+              "description": "*Galaxy S22+, Galaxy Tab S8 Ultra, Galaxy Buds Pro and Galaxy Watch4 Classic sold separately.",
+
+              "items": [
+                {
+                  "imageSrcPc": "parallax02-device-image01-pc.jpg",
+                  "imageSrcMo": "parallax02-device-image01-mo.jpg"
+                },
+                {
+                  "imageSrcPc": "parallax02-device-image02-pc.jpg",
+                  "imageSrcMo": "parallax02-device-image02-mo.jpg"
+                },
+                {
+                  "imageSrcPc": "parallax02-device-image03-pc.jpg",
+                  "imageSrcMo": "parallax02-device-image03-mo.jpg"
+                },
+                {
+                  "imageSrcPc": "parallax02-device-image04-pc.jpg",
+                  "imageSrcMo": "parallax02-device-image04-mo.jpg"
+                },
+                {
+                  "imageSrcPc": "parallax02-device-image05-pc.jpg",
+                  "imageSrcMo": "parallax02-device-image05-mo.jpg"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

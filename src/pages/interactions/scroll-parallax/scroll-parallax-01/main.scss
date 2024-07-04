@@ -1,0 +1,147 @@
+@import '../../../../common/scss/mixins/_conversion.scss';
+
+.component .parallax {
+  :is(&--basic) {
+    max-width: 1440px;
+    margin: 0 auto;
+    @include vw-pc(padding-bottom, 80);
+
+    .parallax {
+      &-wrap {
+        @include vw-pc(width, 1144);
+        margin: 0 auto;
+      }
+      &-text {
+        @include vw-pc(width, 988);
+        margin: 0 auto;
+        @include vw-pc(padding-bottom, 80);
+        &__header {
+          float: left;
+          width: 50%;
+          @include vw-pc(padding-left, 84);
+        }
+        &:after {
+          display: block;
+          clear: both;
+          content: '';
+        }
+      }
+      &-description {
+        @include vw-pc(font-size, 17);
+        line-height: 1.55;
+        color: #000;
+        float: right;
+        width: 50%;
+        @include vw-pc(padding-top, 44);
+        @include vw-pc(padding-left, 10);
+      }
+      &-eyebrow {
+        @include vw-pc(padding-bottom, 20);
+      }
+      &-headline {
+        @include vw-pc(font-size, 39);
+        line-height: 1.20513;
+        color: #000;
+        letter-spacing: -0.01em;
+      }
+      &-image {
+        @include vw-pc(width, 560);
+        @include vw-pc(height, 640);
+        @include vw-pc(padding-left, 20);
+        margin: 0 auto;
+        &__inner {
+          position: relative;
+        }
+        & img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .parallax {
+    :is(&--basic) {
+      padding-bottom: 80px;
+
+      .parallax {
+        &-wrap {
+          width: 1144px;
+        }
+        &-text {
+          width: 988px;
+          padding-bottom: 80px;
+        }
+        &-text-header {
+          padding-left: 84px;
+        }
+        &-description {
+          font-size: 17px;
+          padding-top: 44px;
+          padding-left: 10px;
+        }
+        &-eyebrow {
+          padding-bottom: 20px;
+        }
+        &-headline {
+          font-size: 39px;
+        }
+        &-image {
+          width: 560px;
+          height: 640px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .parallax {
+    :is(&--basic) {
+      @include vw-pc(padding-bottom, 42.66667);
+
+      .parallax {
+        &-wrap {
+          width: 100%;
+        }
+        &-text {
+          width: 100%;
+          @include vw-pc(padding, 0 76.8 85.33333);
+          &__header {
+            float: none;
+            width: 100%;
+            padding-left: 0;
+          }
+        }
+        &-description {
+          @include vw-mo(font-size, 32);
+          line-height: 1.57;
+          letter-spacing: -0.007em;
+          float: none;
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+          @include vw-mo(padding-top, 64);
+        }
+        &-eyebrow {
+          @include vw-mo(padding-bottom, 38.4);
+        }
+        &-headline {
+          @include vw-mo(font-size, 60);
+          line-height: 1.21429;
+          letter-spacing: -0.015em;
+        }
+        &-image {
+          @include vw-mo(width, 576);
+          @include vw-mo(height, 682.66667);
+          padding: 0;
+        }
+      }
+    }
+  }
+}

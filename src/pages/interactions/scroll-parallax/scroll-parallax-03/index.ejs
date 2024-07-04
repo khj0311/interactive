@@ -1,0 +1,46 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="parallax parallax--each">
+      <div class="parallax-wrap">
+        <div class="parallax-item__wrap item-wrap01">
+          <% for( let index = 0; index < 2; index++ ) { %>
+          <% const item = data.items[index]; %>
+          <div class="parallax-item item0<%= index + 1 %>">
+            <div class="parallax-item__inner">
+              <div class="parallax-item__image">
+                <img class="js-lazy-img js-res-img" src="<%= config.blankSrc %>" data-src-pc="/assets/images/scroll-parallax/<%= item.imageSrcPc %>" data-src-mobile="/assets/images/scroll-parallax/<%= item.imageSrcMo %>" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <div class="parallax-text">
+          <p class="mtg-comp-common-headline-m parallax-headline"><%- data.headline %></p>
+        </div>
+        <div class="parallax-item__wrap item-wrap02">
+          <% for( let index = 2; index < 5; index++ ) { %>
+          <% const item = data.items[index]; %>
+          <div class="parallax-item item0<%= index + 1 %>">
+            <div class="parallax-item__inner">
+              <div class="parallax-item__image">
+                <img class="js-lazy-img js-res-img" src="<%= config.blankSrc %>" data-src-pc="/assets/images/scroll-parallax/<%= item.imageSrcPc %>" data-src-mobile="/assets/images/scroll-parallax/<%= item.imageSrcMo %>" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <p class="parallax-description mtg-comp-common-description"><%- data.description %></p>
+      </div>
+    </div>
+  </div>
+</section>

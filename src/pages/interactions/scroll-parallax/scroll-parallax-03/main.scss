@@ -1,0 +1,328 @@
+@import '../../../../common/scss/mixins/_conversion.scss';
+@import '../../../../common/scss/mixins/_conversion.scss';
+
+.component .parallax {
+  :is(&--each) {
+    .parallax {
+      & button {
+        background: 0;
+        cursor: pointer;
+      }
+
+      & button svg {
+        cursor: pointer !important;
+      }
+
+      &-wrap {
+        position: relative;
+        @include vw-pc(width, 1440);
+        margin: 0 auto;
+      }
+
+      &-headline {
+        @include vw-pc(width, 684);
+        margin: 0 auto;
+        @include vw-pc(padding, 0 100);
+        @include vw-pc(font-size, 80);
+        line-height: 1.1;
+        text-align: center;
+      }
+
+      &-item {
+        position: absolute;
+
+        &__wrap {
+          &.item-wrap01 {
+            position: relative;
+            @include vw-pc(height, 684);
+          }
+
+          &.item-wrap02 {
+            position: relative;
+            @include vw-pc(min-height, 573);
+          }
+        }
+
+        &__inner {
+          position: relative;
+        }
+
+        &__image {
+          position: relative;
+
+          img {
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            will-change: transform;
+          }
+        }
+
+        &.item01 {
+          @include vw-pc(width, 587);
+          @include vw-pc(top, -4);
+          @include vw-pc(left, 83);
+
+          .parallax-item__image {
+            @include vw-pc(height, 716);
+          }
+        }
+
+        &.item02 {
+          @include vw-pc(width, 1148);
+          @include vw-pc(top, 108);
+          @include vw-pc(right, -574);
+
+          .parallax-item__image {
+            @include vw-pc(height, 957);
+          }
+        }
+
+        &.item03 {
+          @include vw-pc(width, 296);
+          @include vw-pc(top, -16);
+          @include vw-pc(left, 286);
+
+          .parallax-item__image {
+            @include vw-pc(height, 298);
+          }
+        }
+
+        &.item04 {
+          z-index: 1;
+          @include vw-pc(width, 472);
+          @include vw-pc(top, 63);
+          @include vw-pc(left, 779);
+
+          .parallax-item__image {
+            @include vw-pc(height, 533);
+          }
+        }
+
+        &.item05 {
+          position: relative;
+          @include vw-pc(width, 670);
+          @include vw-pc(padding-top, 484);
+          @include vw-pc(left, 155);
+          pointer-events: none;
+
+          .parallax-item__inner {
+            pointer-events: auto;
+          }
+
+          .parallax-item__image {
+            @include vw-pc(height, 582);
+          }
+        }
+      }
+
+      &-text {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+      }
+
+      &-description {
+        @include vw-pc(width, 820);
+        @include vw-pc(padding-top, 46);
+        margin: 0 auto;
+        @include vw-pc(font-size, 14);
+        line-height: 1.43;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .parallax {
+    :is(&--each) {
+      .parallax {
+        &-wrap {
+          width: 1440px;
+        }
+
+        &-headline {
+          width: 684px;
+          padding: 0 100px;
+          font-size: 80px;
+        }
+
+        &-item {
+          &__wrap {
+            &.item-wrap01 {
+              height: 684px;
+            }
+
+            &.item-wrap02 {
+              min-height: 573px;
+            }
+          }
+
+          &.item01 {
+            width: 587px;
+            top: -4px;
+            left: 83px;
+
+            .parallax-item__image {
+              height: 716px;
+            }
+          }
+
+          &.item02 {
+            width: 1148px;
+            top: 108px;
+            right: -574px;
+
+            .parallax-item__image {
+              height: 957px;
+            }
+          }
+
+          &.item03 {
+            width: 296px;
+            top: -16px;
+            left: 286px;
+
+            .parallax-item__image {
+              height: 298px;
+            }
+          }
+
+          &.item04 {
+            width: 472px;
+            top: 63px;
+            left: 779px;
+
+            .parallax-item__image {
+              height: 533px;
+            }
+          }
+
+          &.item05 {
+            width: 670px;
+            padding-top: 484px;
+            left: 155px;
+
+            .parallax-item__image {
+              height: 582px;
+            }
+          }
+        }
+
+        &-description {
+          width: 820px;
+          padding-top: 46px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .parallax {
+    :is(&--each) {
+      .parallax {
+        &-wrap {
+          width: 100%;
+        }
+
+        &-headline {
+          @include vw-mo(width, 448);
+          padding: 0;
+          @include vw-mo(font-size, 72.53333);
+
+          line-height: 1.17;
+          letter-spacing: normal;
+        }
+
+        &-item {
+          position: relative;
+          width: 100% !important;
+          pointer-events: none;
+
+          &__wrap {
+            direction: ltr;
+            &.item-wrap01 {
+              @include vw-mo(height, 750.93333);
+            }
+            &.item-wrap02 {
+              @include vw-mo(min-height, 567.46667);
+            }
+          }
+
+          &.item01 {
+            @include vw-mo(top, -4.26667);
+            left: 0;
+
+            .parallax-item__image {
+              @include vw-mo(width, 486.4);
+              @include vw-mo(height, 593.06667);
+              @include vw-mo(left, -115.2);
+            }
+          }
+
+          &.item02 {
+            right: 0;
+            @include vw-mo(top, -377.6);
+
+            .parallax-item__image {
+              @include vw-mo(width, 844.8);
+              @include vw-mo(height, 704);
+              @include vw-mo(right, -456.53333);
+            }
+          }
+
+          &.item03 {
+            left: 0;
+            top: 0;
+            @include vw-mo(margin-top, 36.26667);
+
+            .parallax-item__image {
+              @include vw-mo(width, 283.73333);
+              @include vw-mo(height, 285.8666);
+              @include vw-mo(left, 66.13333);
+            }
+          }
+
+          &.item04 {
+            left: 0;
+            top: 0;
+            @include vw-mo(margin-top, -192);
+
+            .parallax-item__image {
+              @include vw-mo(width, 384);
+              @include vw-mo(height, 433.06667);
+              @include vw-mo(left, 456.53333);
+            }
+          }
+
+          &.item05 {
+            left: 0;
+            top: 0;
+            @include vw-mo(margin-top, 89.6);
+            padding-top: 0;
+            @include vw-mo(margin-bottom, 21.33333);
+
+            .parallax-item__image {
+              @include vw-mo(width, 505.6);
+              @include vw-mo(height, 439.46667);
+              @include vw-mo(left, 53.33333);
+            }
+          }
+        }
+
+        &-description {
+          width: 100%;
+          @include vw-mo(padding, 12.8 96 0);
+          @include vw-mo(font-size, 27.73333);
+          line-height: 1.37;
+          text-align: inherit;
+        }
+      }
+    }
+  }
+}

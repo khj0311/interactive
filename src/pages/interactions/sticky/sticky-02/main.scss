@@ -1,0 +1,272 @@
+@import '../../../../common/scss/mixins/_conversion.scss';
+
+.component .sticky {
+  :is(&--02) {
+    .sticky {
+      &-wrap {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+      }
+
+      &-text {
+        position: absolute;
+        @include vw-pc(left, 360);
+        @include vw-pc(top, 120);
+        z-index: 10;
+        @include vw-pc(width, 512);
+        color: #fff;
+      }
+
+      &-eyebrow {
+        @include vw-pc(padding-bottom, 24);
+        @include vw-pc(font-size, 14);
+        color: #fff;
+        letter-spacing: 0.22em;
+      }
+
+      &-sub-headline {
+        @include vw-pc(font-size, 60);
+        @include vw-pc(padding-bottom, 40);
+      }
+
+      &-description {
+        @include vw-pc(width, 512);
+        @include vw-pc(font-size, 18);
+        line-height: 1.5;
+      }
+
+      &-track {
+        position: relative;
+        height: 600vh;
+        min-height: 3600px;
+        direction: ltr;
+      }
+
+      &-fixed {
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        min-height: 500px;
+        overflow: hidden;
+
+        &__bg {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+
+          & img {
+            position: absolute;
+            width: 101%;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &-obj {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include vw-pc(width, 640);
+        @include vw-pc(height, 645);
+        transform: translate(-50%, -50%);
+
+        &__moon {
+          overflow: hidden;
+          position: absolute;
+          left: 50%;
+          @include vw-pc(top, 221);
+          z-index: 20;
+          @include vw-pc(width, 1080);
+          @include vw-pc(height, 1080);
+          @include vw-pc(margin-left, -538);
+          border-radius: 50%;
+          transform: translate(0) scale(1);
+          opacity: 0;
+          background: -o-linear-gradient(243deg, #000 0, #5d69ff 77%, #5d69ff 100%);
+          background: linear-gradient(207deg, #000 0, #5d69ff 77%, #5d69ff 100%);
+          z-index: 24;
+
+          &-clip {
+            position: absolute;
+            @include vw-pc(left, 441);
+            @include vw-pc(top, -407);
+            z-index: 30;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #040f26;
+          }
+        }
+
+        &__watches-main {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          @include vw-pc(width, 440);
+          @include vw-pc(height, 645);
+          transform: translate(-50%, -50%);
+          z-index: 21;
+          opacity: 0;
+          & img {
+            width: 100%;
+          }
+        }
+
+        @for $i from 1 through 3 {
+          &__watches-display--#{$i} {
+            position: absolute;
+            left: 50%;
+            @include vw-pc(top, 156);
+            z-index: 10;
+            @include vw-pc(width, 333);
+            @include vw-pc(height, 333);
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 22;
+            & img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .sticky {
+    :is(&--02) {
+      .sticky {
+        &-text {
+          left: 360px;
+          width: 512px;
+          top: 120px;
+        }
+
+        &-eyebrow {
+          padding-bottom: 24px;
+          font-size: 14px;
+        }
+
+        &-sub-headline {
+          padding-bottom: 40px;
+          font-size: 60px;
+        }
+
+        &-description {
+          width: 512px;
+          font-size: 18px;
+        }
+
+        &-obj {
+          width: 640px;
+          height: 645px;
+          &__moon {
+            top: 221px;
+            width: 1080px;
+            height: 1080px;
+            margin-left: -538px;
+          }
+          &__moon-clip {
+            left: 441px;
+            top: -407px;
+          }
+          &__watches-main {
+            width: 440px;
+            height: 645px;
+          }
+          @for $i from 1 through 3 {
+            &__watches-display--#{$i} {
+              top: 156px;
+              width: 333px;
+              height: 333px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .sticky {
+    :is(&--02) {
+      .sticky {
+        &-text {
+          left: 0;
+          @include vw-mo(top, 106.66667);
+          width: 100%;
+          @include vw-mo(padding, 0 93.86667);
+        }
+
+        &-eyebrow {
+          padding-bottom: 0;
+          @include vw-mo(font-size, 25.6);
+        }
+
+        &-sub-headline {
+          @include vw-mo(width, 544);
+          @include vw-mo(font-size, 81.06667);
+          letter-spacing: normal;
+        }
+
+        &-description {
+          width: 100%;
+          @include vw-mo(font-size, 32);
+        }
+
+        &-track {
+          min-height: 3000px;
+        }
+
+        &-fixed {
+          min-height: 500px;
+          background-color: #000;
+        }
+
+        &-obj {
+          width: 100%;
+          @include vw-mo(height, 1085.86667);
+          margin-top: calc(79px / 2);
+
+          &__moon {
+            top: 36.2%;
+            left: 0;
+            width: 100%;
+            @include vw-mo(height, 768);
+            margin-left: 0;
+            &-clip {
+              @include vw-mo(left, 320);
+              @include vw-mo(top, -320px);
+            }
+          }
+
+          &__watches-main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include vw-mo(width, 663.46667);
+            @include vw-mo(height, 972.8);
+          }
+
+          @for $i from 1 through 3 {
+            &__watches-display--#{$i} {
+              @include vw-mo(top, 292.26667);
+              @include vw-mo(width, 505.6);
+              @include vw-mo(height, 505.6);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -443,6 +443,109 @@
           "title": "BLOOD PRESSURE &amp; ECG",
           "headline": "All the data your heart desires",
           "description": " Meet the Samsung BioActive Sensor that measures ECG and blood pressure in real time. After initial calibration, the sensors quickly check your blood pressure. You can also check abnormal heart rate and rhythm through ECG and send data straight to your phone to be easily shared."
+        },
+        {
+          "name": "Sticky Motion",
+          "id": "sticky",
+          "contents": [
+            {
+              "name": "Sticky Animation",
+              "id": "sticky-01",
+              "goals": [
+                "sticky 시작 구간부터 끝 구간까지 background 이미지(mtg-comp-battery__obj-bg-inner img) y축 이동",
+                "이미지 이동 구간은 이미지가 노출되는 wrap 기준으로 함."
+              ],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch5-pro/#battery"
+            },
+            {
+              "name": "Sticky Class Toggle",
+              "id": "sticky-02",
+              "goals": [
+                "sticky 시작 구간부터 끝 구간까지 percentage 계산",
+                "동작성은 참고 URL 확인",
+                "Moon Scale 점차 작아지며 Watch 이미지에 합쳐 져야함",
+                "메인 Watch 이미지, Cover 이미지의 Opacity 조정"
+              ],
+              "goalsExampleTitle": "동작성 구간 예시",
+              "goalsExamples": [
+                "Step1 - Moon Scale : 5% ~ 30%",
+                "Step2 - Cover1 Opacity : 25% ~ 30%",
+                "Step3 - Main Watch Opacity : 30% ~ 35%",
+                "Step4 - Cover2 Opacity : 40% ~ 65%",
+                "Step5 - Cover3 Opacity : 65% ~ 90%"
+              ],
+              "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch5-pro/#sleep-tracking"
+            },
+            {
+              "name": "Sticky Sidebar",
+              "id": "sticky-03",
+              "goals": ["컨텐츠 스크롤 시, 왼쪽 사이드바 sticky", "Scrollable Sticky Element 예제 참조"],
+              "refUrl": "https://abouolia.github.io/sticky-sidebar/",
+
+              "items": [
+                {
+                  "color": "red",
+                  "icon": "🧀",
+                  "title": "Contrary to popular belief",
+                  "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+                },
+                {
+                  "color": "orange",
+                  "icon": "🍒",
+                  "title": "Contrary to popular belief",
+                  "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+                },
+                {
+                  "color": "yellow",
+                  "icon": "🍖",
+                  "title": "Contrary to popular belief",
+                  "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+                },
+                {
+                  "color": "green",
+                  "icon": "🍔",
+                  "title": "Contrary to popular belief",
+                  "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+                },
+                {
+                  "color": "blue",
+                  "icon": "🍟",
+                  "title": "Contrary to popular belief",
+                  "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+                },
+                {
+                  "color": "purple",
+                  "icon": "🥑",
+                  "title": "Contrary to popular belief",
+                  "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains"
+                }
+              ]
+            },
+            {
+              "name": "Sticky Card Effect",
+              "id": "sticky-04",
+              "goals": ["전체 스티키 영역 내 <mark>mtg-comp-card-sticky__item</mark> element 별로 각각 percentage 계산", "동작성은 참고 URL 확인"],
+              "refUrl": "https://des.obys.agency/",
+
+              "items": [
+                {
+                  "title": "Typography Principles",
+                  "date": "2024 /6+ / 01 Season / 03h 45m",
+                  "imageSrc": "sticky04-bg-image01.jpg"
+                },
+                {
+                  "title": "Colors Combinations",
+                  "date": "2024 /6+ / 02 Season / 03h 28m",
+                  "imageSrc": "sticky04-bg-image02.jpg"
+                },
+                {
+                  "title": "Grids",
+                  "date": "2025 /6+ / 03 Season / 04h 20m",
+                  "imageSrc": "sticky04-bg-image03.jpg"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

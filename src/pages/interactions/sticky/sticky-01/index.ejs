@@ -1,0 +1,60 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="sticky sticky--01">
+      <div class="sticky-wrap">
+        <div class="sticky-content">
+          <div class="sticky-text">
+            <div class="sticky-text__inner">
+              <h3 class="sticky-eyebrow" id="battery">BATTERY</h3>
+              <p class="sticky-sub__headline">Power through your workout</p>
+            </div>
+            <p class="sticky-description">
+              Go hard knowing that your watch can keep up, with the biggest battery capacity among our wearable series.
+            </p>
+          </div>
+          <div class="sticky-track">
+            <div class="sticky-obj sticky-fixed">
+              <div class="sticky-obj__bg">
+                <div class="sticky-obj__bg-inner">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky01-bg-image-pc.jpg"
+                    data-src-mobile="/assets/images/sticky/sticky01-bg-image-mo.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="sticky-obj__text">
+                <div class="sticky-obj__text--1">
+                  <span class="sticky-obj__text--feature">590</span>
+                  <span class="sticky-obj__text--name">mAh (typical) Battery</span>
+                </div>
+              </div>
+              <div class="sticky-obj__watch">
+                <img
+                  src="/assets/images/blank.gif"
+                  class="js-lazy-img js-res-img"
+                  data-src-pc="/assets/images/sticky/sticky01-device-image-pc.png"
+                  data-src-mobile="/assets/images/sticky/sticky01-device-image-mo.png"
+                  alt=""
+                />
+              </div>
+              <p class="blind">A Titanium Galaxy Watch5 Pro in black showing the time as '10:08', date as 'SAT 28', weather, and heart rate on the watch face.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

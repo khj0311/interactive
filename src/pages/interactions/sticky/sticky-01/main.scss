@@ -1,0 +1,316 @@
+@import '../../../../common/scss/mixins/_conversion.scss';
+
+.component .sticky {
+  :is(&--01) {
+    position: relative;
+    z-index: 10;
+
+    .sticky {
+      &-wrap {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+        background-color: #000;
+        @include vw-pc(padding, 120 0);
+
+        &:before {
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -1px;
+          width: 100%;
+          height: 2px;
+          background-color: #000;
+          content: '';
+        }
+      }
+
+      &-content {
+        position: relative;
+        @include vw-pc(width, 1200);
+        margin: 0 auto;
+        padding-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      &-text {
+        position: relative;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        @include vw-pc(padding-bottom, 69);
+
+        &__inner {
+          @include vw-pc(width, 751);
+          @include vw-pc(padding-right, 217);
+        }
+      }
+
+      &-eyebrow {
+        @include vw-pc(margin-bottom, 33);
+        @include vw-pc(font-size, 14);
+        letter-spacing: 0.22em;
+      }
+
+      &-sub__headline {
+        @include vw-pc(font-size, 60);
+        line-height: 1.29;
+        letter-spacing: normal;
+      }
+
+      &-description {
+        display: block;
+        @include vw-pc(width, 449);
+        @include vw-pc(padding-top, 56);
+        @include vw-pc(font-size, 18);
+        line-height: 1.5;
+      }
+
+      &-track {
+        position: relative;
+        height: 300vh;
+        min-height: 2400px;
+        direction: ltr;
+      }
+
+      &-fixed {
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+      }
+
+      &-obj__bg {
+        position: relative;
+        @include vw-pc(width, 1200);
+        height: 81%;
+        overflow: hidden;
+        margin: 0 auto;
+
+        &-inner {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          & img {
+            width: 100%;
+          }
+        }
+      }
+
+      &-obj__text {
+        position: absolute;
+        width: 100%;
+        @include vw-pc(min-height, 120);
+        top: 16%;
+        left: 0;
+        color: #fff;
+        text-align: center;
+
+        &--1 {
+          opacity: 1;
+          transition: opacity 0.2s;
+        }
+
+        &--feature {
+          display: block;
+          @include vw-pc(font-size, 150);
+          line-height: 1;
+        }
+
+        &--name {
+          display: block;
+          @include vw-pc(font-size, 20);
+          line-height: 1;
+        }
+
+        &.step1 &--1 {
+          opacity: 1;
+        }
+
+        &.step2 &--1 {
+          opacity: 1;
+        }
+
+        &.step3 &--1 {
+          opacity: 1;
+        }
+      }
+
+      &-obj__watch {
+        position: absolute;
+        @include vw-pc(width, 365);
+        @include vw-pc(height, 536);
+        top: 55%;
+        left: 50%;
+        @include vw-pc(margin-left, -182);
+        z-index: 1;
+
+        & img {
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .sticky {
+    :is(&--01) {
+      .sticky {
+        &-wrap {
+          padding: 120px 0;
+        }
+
+        &-content {
+          width: 1200px;
+          padding-bottom: 0;
+        }
+
+        &-text {
+          padding-bottom: 69px;
+          &-inner {
+            width: 751px;
+            padding-right: 217px;
+          }
+        }
+
+        &-eyebrow {
+          margin-bottom: 33px;
+          font-size: 14px;
+        }
+
+        &-sub__headline {
+          font-size: 60px;
+        }
+
+        &-description {
+          width: 449px;
+          padding-top: 56px;
+          font-size: 18px;
+        }
+
+        &-obj-bg {
+          width: 1200px;
+        }
+
+        &-obj-text {
+          min-height: 120px;
+
+          &--feature {
+            font-size: 150px;
+          }
+
+          &--name {
+            font-size: 20px;
+          }
+        }
+
+        &-obj-watch {
+          width: 365px;
+          height: 536px;
+          margin-left: -182px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .sticky {
+    :is(&--01) {
+      .sticky {
+        &-wrap {
+          @include vw-mo(padding, 106.66667 0);
+        }
+
+        &-content {
+          width: 100%;
+          padding-bottom: 0;
+        }
+
+        &-track {
+          min-height: 1500px;
+        }
+
+        &-fixed {
+          min-height: 500px;
+        }
+
+        &-text {
+          width: 100%;
+          flex-direction: column;
+          @include vw-mo(padding, 0 140.8 64 93.86667);
+
+          &__inner {
+            width: 100%;
+            padding-right: 0;
+            padding-right: 0;
+          }
+        }
+
+        &-eyebrow {
+          @include vw-mo(font-size, 25.6);
+        }
+
+        &-sub__headline {
+          @include vw-mo(font-size, 64);
+        }
+
+        &-description {
+          width: 100%;
+          padding-top: 0;
+          @include vw-mo(margin-top, 29.86667);
+          @include vw-mo(font-size, 32);
+        }
+
+        &-obj-bg {
+          width: 100%;
+          height: 80%;
+          &__inner {
+            width: 100%;
+          }
+        }
+
+        &-obj__text {
+          width: 100%;
+          @include vw-mo(min-height, 202.66667);
+          top: 10%;
+          &--1 {
+            opacity: 1;
+          }
+          &--feature {
+            @include vw-mo(font-size, 183.46667);
+            line-height: 1;
+          }
+          &--name {
+            @include vw-mo(margin-top, -4.26667);
+            @include vw-mo(font-size, 36.26667);
+            line-height: 1.1;
+          }
+        }
+
+        &-obj__watch {
+          position: absolute;
+          @include vw-mo(width, 401.06667);
+          @include vw-mo(height, 590.93333);
+          bottom: auto;
+          top: 45%;
+          @include vw-mo(margin-left, -200.53333);
+          & img {
+            width: 100%;
+          }
+        }
+
+        &-fixed {
+          top: 79px;
+          height: calc(100vh - 79px);
+        }
+      }
+    }
+  }
+}

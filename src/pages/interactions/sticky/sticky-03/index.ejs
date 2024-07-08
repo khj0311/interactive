@@ -1,0 +1,59 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="sticky sticky--sidebar">
+      <div class="sticky-container">
+        <div class="sticky-wrap not-fixed">
+          <div class="sticky-content sticky-content--fixed">
+            <div class="sticky-content__inner">
+              <div class="sticky-profile__wrap">
+                <div class="sticky-profile__icon">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky03-profile-image.jpg"
+                    data-src-mobile="/assets/images/sticky/sticky03-profile-image.jpg"
+                    alt=""
+                  />
+                </div>
+                <p class="sticky-profile__name">Casper</p>
+              </div>
+              <ul class="sticky-icon__wrap">
+                <% data.items.forEach(item => { %>
+                <li class="sticky-icon__food sticky-color--<%= item.color %>"><%= item.icon %></li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+          <div class="sticky-content sticky-content--scroll">
+            <div class="sticky-content__inner">
+              <ul class="sticky-content__list">
+                <% data.items.forEach(item => { %>
+                  <li class="sticky-content__item">
+                    <div class="sticky-content__header sticky-color--<%= item.color %>">
+                      <span class="sticky-content__icon"><%= item.icon %></span>
+                      <h4 class="sticky-content__title"><%= item.title %></h4>
+                    </div>
+                    <p class="sticky-content__desc"><%= item.description %></p>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+          <div class="sticky-footer">
+            <p class="sticky-footer__disc">🧀 Zoey Company</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

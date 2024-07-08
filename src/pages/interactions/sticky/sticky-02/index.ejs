@@ -1,0 +1,95 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="sticky sticky--02">
+      <div class="sticky-wrap">
+        <div class="sticky-text">
+          <h3 class="sticky-eyebrow" id="sleep-tracking">SLEEP TRACKING</h3>
+          <p class="sticky-sub-headline">Sleep tracking from A to Zzz</p>
+          <p class="sticky-description">
+            Our improved sleep tracking technology tracks your sleep stages to help you create healthier sleep habits and identify your sleep type via 8 animal sleep symbols.
+            You'll also receive nightly sleep reports, so you can rest easy.
+          </p>
+        </div>
+        <div class="sticky-track">
+          <div class="sticky-fixed">
+            <div class="sticky-fixed__bg">
+              <img
+                src="/assets/images/blank.gif"
+                class="js-lazy-img js-res-img"
+                data-src-pc="/assets/images/sticky/sticky02-bg-image-pc.jpg"
+                data-src-tablet="/assets/images/sticky/sticky02-bg-image-tb.jpg"
+                data-src-mobile="/assets/images/sticky/sticky02-bg-image-mo.jpg"
+                alt=""
+              />
+            </div>
+            <div class="sticky-obj">
+              <div class="sticky-obj__moon">
+                <div class="sticky-obj__moon-clip"></div>
+              </div>
+              <div class="sticky-obj__watches">
+                <div class="sticky-obj__watches-display--1">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky02-gui-image01-pc.png"
+                    data-src-tablet="/assets/images/sticky/sticky02-gui-image01-tb.png"
+                    data-src-mobile="/assets/images/sticky/sticky02-gui-image01-mo.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="sticky-obj__watches-main">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky02-gui-image02-pc.png"
+                    data-src-tablet="/assets/images/sticky/sticky02-gui-image02-tb.png"
+                    data-src-mobile="/assets/images/sticky/sticky02-gui-image02-mo.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="sticky-obj__watches-display--2">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky02-gui-image03-pc.png"
+                    data-src-tablet="/assets/images/sticky/sticky02-gui-image03-tb.png"
+                    data-src-mobile="/assets/images/sticky/sticky02-gui-image03-mo.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="sticky-obj__watches-display--3">
+                  <img
+                    src="/assets/images/blank.gif"
+                    class="js-lazy-img js-res-img"
+                    data-src-pc="/assets/images/sticky/sticky02-gui-image04-pc.png"
+                    data-src-tablet="/assets/images/sticky/sticky02-gui-image04-tb.png"
+                    data-src-mobile="/assets/images/sticky/sticky02-gui-image04-mo.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <p class="blind">
+                A Titan Galaxy Watch5 Pro shows the sleep time and sleep score at first and then shows a sleep dashboard indicating the sleep stages: Awake, REM, Light, and Deep.
+                After that, it shows the sleep time and calories burned.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

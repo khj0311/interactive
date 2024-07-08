@@ -25,6 +25,16 @@
         <% data.goals.forEach(goal => { %>
         <li class="accordion-container__item"><%- goal %></li>
         <% }) %>
+        <% if (typeof data.goalsExamples !== 'undefined' && data.goalsExamples.length > 0) { %>
+          <li class="accordion-container__item">
+            <%- data.goalsExampleTitle %>
+            <div>
+            <% data.goalsExamples.forEach(exam => { %>
+              <p class="accordion-container__text"><%- exam %></p>
+            <% }) %>
+            </div>
+          </li>
+        <% } %>
       </ol>
       <% if (typeof data.refUrl !== 'undefined' && data.refUrl !== '') { %>
       <p class="accordion-container__text">

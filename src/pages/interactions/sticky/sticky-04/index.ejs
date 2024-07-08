@@ -1,0 +1,38 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="mtg-comp-card-sticky sticky sticky--card">
+      <ul class="sticky-list">
+        <% data.items.forEach(item => { %>
+          <li class="sticky-item">
+            <span class="sticky-dimm"></span>
+            <div class="sticky-content">
+              <div class="sticky-content__header">
+                <h3 class="sticky-content__headline"><%= item.title %></h3>
+                <p class="sticky-content__date"><%= item.date %></p>
+              </div>
+              <div class="sticky-content__image">
+                <img
+                  src="/assets/images/blank.gif"
+                  class="js-lazy-img js-res-img"
+                  data-src-pc="/assets/images/sticky/<%= item.imageSrc %>"
+                  data-src-mobile="/assets/images/sticky/<%= item.imageSrc %>"
+                  alt=""
+                />
+              </div>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>

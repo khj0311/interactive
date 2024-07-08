@@ -107,6 +107,6 @@
       activeElement: '.sticky-obj__bg img',
     };
 
-    new StickyMotion01('.sticky--01', params);
+    new StickyMotion01('.sticky--anim', params);
   });
 })();

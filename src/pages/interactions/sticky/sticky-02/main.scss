@@ -1,7 +1,7 @@
 @import '../../../../common/scss/mixins/_conversion.scss';
 
 .component .sticky {
-  :is(&--02) {
+  :is(&--toggle) {
     .sticky {
       &-wrap {
         position: relative;
@@ -144,7 +144,7 @@
 
 @include desktop {
   .component .sticky {
-    :is(&--02) {
+    :is(&--toggle) {
       .sticky {
         &-text {
           left: 360px;
@@ -199,7 +199,7 @@
 
 @include mobile {
   .component .sticky {
-    :is(&--02) {
+    :is(&--toggle) {
       .sticky {
         &-text {
           left: 0;

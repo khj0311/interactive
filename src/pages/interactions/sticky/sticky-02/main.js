@@ -200,6 +200,6 @@
       sleepDisplay3: '.sticky-obj__watches-display--3',
     };
 
-    new StickyMotion02('.sticky--02', params);
+    new StickyMotion02('.sticky--toggle', params);
   });
 })();

@@ -1,7 +1,7 @@
 @import '../../../../common/scss/mixins/_conversion.scss';
 
 .component .sticky {
-  :is(&--01) {
+  :is(&--anim) {
     position: relative;
     z-index: 10;
 
@@ -160,7 +160,7 @@
 
 @include desktop {
   .component .sticky {
-    :is(&--01) {
+    :is(&--anim) {
       .sticky {
         &-wrap {
           padding: 120px 0;
@@ -222,7 +222,7 @@
 
 @include mobile {
   .component .sticky {
-    :is(&--01) {
+    :is(&--anim) {
       .sticky {
         &-wrap {
           @include vw-mo(padding, 106.66667 0);

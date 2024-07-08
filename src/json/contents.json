@@ -366,6 +366,20 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Class Toggle",
+          "id": "class-toggle",
+          "goals": [
+            "이미지 각각의 center가 window top 기준 70% 도달 시 is-active 클래스 붙여서 토글",
+            "정방향 -> 이미지 영역 지나고 나면 클래스 붙여진대로 유지",
+            "역방향 -> 이미지 각각의 top, window bottom 기준 is-active 클래스 제거"
+          ],
+          "refUrl": "https://www.samsung.com/global/galaxy/galaxy-watch4/#bp-ecg",
+
+          "title": "BLOOD PRESSURE &amp; ECG",
+          "headline": "All the data your heart desires",
+          "description": " Meet the Samsung BioActive Sensor that measures ECG and blood pressure in real time. After initial calibration, the sensors quickly check your blood pressure. You can also check abnormal heart rate and rhythm through ECG and send data straight to your phone to be easily shared."
         }
       ]
     }

@@ -1,0 +1,69 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="mtg-comp-blood toggle toggle--scroll">
+      <div class="toggle-wrap">
+        <div class="toggle-text">
+          <h3 class="toggle-eyebrow mtg-comp-common-eyebrow" id="bp-ecg"><%= data.title %></h3>
+          <p class="toggle-headline mtg-comp-common-headline-s"><%= data.headline %></p>
+          <p class="toggle-description mtg-comp-common-description"><%= data.description %></p>
+        </div>
+        <div class="toggle-list">
+          <div class="toggle-list__item js-watch-grid01">
+            <div class="toggle-image">
+              <img
+                src="/assets/images/blank.gif"
+                class="toggle-image__base js-lazy-img js-res-img"
+                data-src-pc="/assets/images/class-toggle/toggle-device-image02-pc.jpg"
+                data-src-mobile="/assets/images/class-toggle/toggle-device-image02-mo.jpg"
+                alt="The underneath of the Galaxy Watch4 device's sensor that measures Blood Pressure is highlighted, followed by the sensor measuring ECG being highlighted."
+              />
+              <img
+                src="/assets/images/blank.gif"
+                class="toggle-image__over js-lazy-img js-res-img"
+                data-src-pc="/assets/images/class-toggle/toggle-cover-image02-pc.jpg"
+                data-src-mobile="/assets/images/class-toggle/toggle-cover-image02-mo.jpg"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="toggle-list__text">
+              <p class="toggle-list__description mtg-comp-common-description">
+                <strong>Blood Pressure</strong> Measure Blood Pressure using an Optical Heart Rate Sensor known as the PPG Sensor.
+              </p>
+              <p class="toggle-list__description mtg-comp-common-description"><strong>ECG</strong> Measure ECG using an Electrical Heart Sensor.</p>
+            </div>
+          </div>
+          <div class="toggle-list__item js-watch-grid02">
+            <div class="toggle-image">
+              <img
+                src="/assets/images/blank.gif"
+                class="toggle-image__base js-lazy-img js-res-img"
+                data-src-pc="/assets/images/class-toggle/toggle-device-image01-pc.jpg"
+                data-src-mobile="/assets/images/class-toggle/toggle-device-image01-mo.jpg"
+                alt="The front watch face of the Galaxy Watch4 device is measuring blood pressure. Its display changes from the blood pressure measuring feature to the ECG measuring feature."
+              />
+              <img
+                src="/assets/images/blank.gif"
+                class="toggle-image__over js-lazy-img js-res-img"
+                data-src-pc="/assets/images/class-toggle/toggle-cover-image01-pc.jpg"
+                data-src-mobile="/assets/images/class-toggle/toggle-cover-image01-mo.jpg"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

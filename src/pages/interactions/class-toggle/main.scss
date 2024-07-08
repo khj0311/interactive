@@ -1,0 +1,272 @@
+@import '../../../common/scss/abstracts/variables';
+@import '../../../common/scss/mixins/conversion';
+
+.component .toggle {
+  :is(&--scroll) {
+    max-width: 1440px;
+    margin: 100vh auto;
+
+    .toggle {
+      &-text {
+        position: relative;
+        @include vw-pc(width, 652);
+        margin: 0 auto;
+        @include vw-pc(padding-bottom, 74);
+      }
+
+      &-eyebrow {
+        padding-bottom: 20px;
+        padding-bottom: 1.38889vw;
+      }
+
+      &-description {
+        position: absolute;
+        @include vw-pc(right, -204);
+        @include vw-pc(bottom, -192);
+        z-index: 1;
+        @include vw-pc(width, 502);
+        @include vw-pc(padding-right, 36);
+      }
+
+      &-list {
+        position: relative;
+        @include vw-pc(width, 1060);
+        margin: 0 auto;
+
+        &:after {
+          display: block;
+          clear: both;
+          content: '';
+        }
+
+        &__item {
+          position: relative;
+          @include vw-pc(width, 520);
+
+          &:first-child {
+            float: left;
+          }
+
+          &:nth-child(2) {
+            float: right;
+            @include vw-pc(margin-top, 233);
+          }
+        }
+
+        &__text {
+          @include vw-pc(padding-top, 32);
+          @include vw-pc(padding-left, 36);
+          & strong {
+            font-weight: 700;
+          }
+        }
+
+        &__description {
+          @include vw-pc(padding-top, 23);
+          @include vw-pc(font-size, 15);
+          line-height: 1.46667;
+          color: #575757;
+        }
+      }
+
+      &-list__item.is-active {
+        .toggle-image__over {
+          opacity: 1;
+        }
+      }
+
+      &-list {
+        .toggle-image {
+          position: relative;
+          overflow: hidden;
+          @include vw-pc(height, 640);
+
+          & img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+          }
+
+          &__over {
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.5s linear;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .component .toggle {
+    :is(&--scroll) {
+      .toggle {
+        &-text {
+          width: 652px;
+          padding-bottom: 74px;
+        }
+
+        &-eyebrow {
+          padding-bottom: 20px;
+        }
+
+        &-description {
+          right: -204px;
+          bottom: -192px;
+          width: 520px;
+          padding-right: 36px;
+        }
+
+        &-list {
+          width: 1060px;
+          &__item {
+            width: 520px;
+          }
+          &__item:nth-child(2) {
+            margin-top: 233px;
+          }
+          &__text {
+            padding-top: 32px;
+            padding-left: 36px;
+          }
+          &__description {
+            padding-top: 23px;
+            font-size: 15px;
+          }
+        }
+
+        &-list {
+          .toggle-image {
+            height: 640px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .component .toggle {
+    @include vw-mo(padding-top, 200.53333);
+
+    :is(&--scroll) {
+      .toggle {
+        &-wrap {
+          @include vw-mo(padding, 0 76.8);
+        }
+
+        &-text {
+          width: 100%;
+          @include vw-mo(padding-bottom, 59.73333);
+        }
+
+        &-eyebrow {
+          @include vw-mo(padding-bottom, 38.4);
+        }
+
+        &-description {
+          position: static;
+          width: 100%;
+          padding-right: 0;
+          @include vw-mo(padding-top, 55.46667);
+        }
+
+        &-list {
+          width: 100%;
+          &__item {
+            width: 100%;
+
+            &:first-child {
+              float: none;
+            }
+
+            &:first-child {
+              .toggle-list__description {
+                position: static;
+                padding-left: 0;
+              }
+            }
+
+            &:nth-child(2) {
+              float: none;
+              @include vw-mo(margin-top, 66.13333);
+            }
+          }
+
+          &__text {
+            padding-top: 0;
+            padding-left: 0;
+            padding-left: 0;
+          }
+
+          &__description {
+            @include vw-mo(padding-top, 32);
+            @include vw-mo(font-size, 32);
+            line-height: 1.54;
+          }
+        }
+
+        &-list {
+          .toggle-image {
+            @include vw-mo(height, 804.26667);
+          }
+        }
+      }
+    }
+  }
+}
+.mtg-comp-blood {
+  @media screen and (max-width: 767px) {
+    & {
+      @include vw-mo(padding-top, 200.53333);
+    }
+    &__wrap {
+      @include vw-mo(padding, 0 76.8);
+    }
+    &__text {
+      width: 100%;
+      @include vw-mo(padding-bottom, 59.73333);
+    }
+    &__eyebrow {
+      @include vw-mo(padding-bottom, 38.4);
+    }
+    &__description {
+      position: static;
+      width: 100%;
+      padding-right: 0;
+      @include vw-mo(padding-top, 55.46667);
+    }
+    &__list {
+      width: 100%;
+      &-item {
+        width: 100%;
+        &:first-child {
+          float: none;
+        }
+        &:first-child &__description {
+          position: static;
+          padding-left: 0;
+        }
+        &:nth-child(2) {
+          float: none;
+          @include vw-mo(margin-top, 66.13333);
+        }
+      }
+      &-text {
+        padding-top: 0;
+        padding-left: 0;
+        padding-left: 0;
+      }
+      &-description {
+        @include vw-mo(padding-top, 32);
+        @include vw-mo(font-size, 32);
+        line-height: 1.54;
+      }
+    }
+    &__list &__image {
+      @include vw-mo(height, 804.26667);
+    }
+  }
+}

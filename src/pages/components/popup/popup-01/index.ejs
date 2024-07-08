@@ -1,0 +1,49 @@
+<section class="feature">
+  <% if (typeof data.goals !== 'undefined' && data.goals.length > 0) { %>
+  <% const overviewPath = `${config.baseDir}/src/layout/overview/index.ejs`; %>
+  <!-- Include Overview -->
+  <%- include(overviewPath, {
+      config,
+      data
+    }) %>
+  <% } %>
+
+  <!-- Component Area -->
+  <div class="component">
+    <div class="popup popup--layer01">
+      <% data.items.forEach((item, index) => { %>
+      <button type="button" class="popup-button popup-button--open" data-hash="popup0<%= index + 1 %>">
+        <span class="popup-button__text"><%- item.buttonTitle %></span>
+        <svg><use xlink:href="/assets/images/icon-sprite.svg#icon-popup-expand"/></svg>
+      </button>
+
+      <div class="popup-layer" data-popup="popup0<%= index + 1 %>">
+        <div class="popup-layer__wrap">
+          <div class="popup-button__wrap popup-button__wrap--close">
+            <button type="button" class="popup-button popup-button--close">
+              <svg><use xlink:href="/assets/images/icon-sprite.svg#icon-popup-close"/></svg>
+            </button>
+          </div>
+          <div class="popup-layer__content-inner">
+            <div class="popup-layer__content">
+              <div class="popup-layer__header">
+                <h2 class="popup-layer__headline"><%- item.headline %></h2>
+                <p class="popup-layer__desc"><%- item.description %></p>
+              </div>
+              <div class="popup-layer__image">
+                <img
+                  src="/assets/images/blank.gif"
+                  class="js-lazy-img js-res-img"
+                  data-src-pc="/assets/images/popup/<%= item.imageSrcPc %>"
+                  data-src-mo="/assets/images/popup/<%= item.imageSrcMo %>"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

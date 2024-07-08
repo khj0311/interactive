@@ -270,6 +270,69 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Popup",
+          "id": "popup",
+          "contents": [
+            {
+              "name": "Layer Popup 01",
+              "id": "popup-01",
+              "libs": [
+                {
+                  "href": "https://gsap.com/docs/v3/",
+                  "name": "gsap"
+                }
+              ],
+              "goals": [
+                "버튼 클릭 시, 팝업에 <mark>is-active</mark> 클래스 추가/삭제",
+                "팝업 열릴 때, 컨텐츠는 Fade-in 되며 아래에서 위로 올라오며 dimm 영역은 블러처리",
+                "팝업 열린 후, 배경 스크롤 X",
+                "팝업 닫힐 때, 컨텐츠와 배경 모두 Fade-out"
+              ],
+
+              "items": [
+                {
+                  "buttonTitle": "View Detail",
+                  "headline": "iPhone. <br />Forged in titanium.",
+                  "description": "Mobile games will look and feel so immersive, <br />with incredibly detailed environments and more realistic characters.",
+                  "imageSrcPc": "popup01-image-pc.jpg",
+                  "imageSrcMo": "popup01-image-mo.jpg"
+                }
+              ]
+            },
+            {
+              "name": "Layer Popup 02",
+              "id": "popup-02",
+              "libs": [
+                {
+                  "href": "https://gsap.com/docs/v3/",
+                  "name": "gsap"
+                }
+              ],
+              "goals": [
+                "<mark>data-hash</mark> 속성을 활용하여 각 버튼으로의 각각의 팝업 open/close 제어",
+                "팝업 열릴 때, 컨텐츠는 Fade-in 되며 아래에서 위로 올라오며 dimm 영역은 블러처리",
+                "팝업 열린 후, 배경 스크롤 X",
+                "팝업 닫힐 때, 컨텐츠와 배경 모두 Fade-out"
+              ],
+
+              "items": [
+                {
+                  "buttonTitle": "View Detail",
+                  "headline": "A17 Pro chip. <br />A monster win for gaming.",
+                  "imageSrcPc": "popup02-image01-pc.jpg",
+                  "imageSrcMo": "popup02-image01-mo.jpg"
+                },
+                {
+                  "buttonTitle": "View Detail",
+                  "headline": "Gigablast <br />your gigabits.",
+                  "imageSrcPc": "popup02-image02-pc.jpg",
+                  "imageSrcMo": "popup02-image02-mo.jpg"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

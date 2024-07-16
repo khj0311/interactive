@@ -26,13 +26,13 @@
 <br />
 <br />
 
-![header](https://capsule-render.vercel.app/api?type=soft&height=50&color=ffd55f&section=header&text=실행%20및%20Gulp&fontSize=24&fontColor=323235)
+![header](https://capsule-render.vercel.app/api?type=soft&height=50&color=ffd55f&section=header&text=Setting%20및%20Gulp&fontSize=24&fontColor=323235)
 
 ### 1. 최초 실행
 
+- repository: http://121.252.183.25:8060/MTG/interactive-new.git
 - node-v: v20.11.1
 - npm-v: 10.2.4
-- repository: http://121.252.183.25:8060/MTG/interactive-new.git
 
 ```
 npm i
@@ -53,6 +53,34 @@ npm i
   - `gulp build`
     - build (./src => ./public)
     - FTP 업로드 전 모든 파일 build
+
+### 3. Prettierrc
+
+```json
+{
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 180,
+  "bracketSpacing": true,
+  "bracketSameLine": false
+}
+```
+
+### 4. settings.json
+
+```json
+{
+  "emmet.includeLanguages": {
+    "ejs": "html"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "j69.ejs-beautify"
+  }
+}
+```
 
 <br />
 <br />
@@ -236,34 +264,6 @@ npm i
 - asset명
   - 공통으로 사용하는 이미지: file-name.jpg
   - 컴포넌트 내에서 사용되는 이미지: {component-name}-file-name.jpg
-
-### 2. Prettierrc
-
-```json
-{
-  "singleQuote": true,
-  "jsxSingleQuote": true,
-  "semi": true,
-  "useTabs": false,
-  "tabWidth": 2,
-  "printWidth": 180,
-  "bracketSpacing": true,
-  "bracketSameLine": false
-}
-```
-
-### 3. Prettierrc
-
-```json
-{
-  "emmet.includeLanguages": {
-    "ejs": "html"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "j69.ejs-beautify"
-  }
-}
-```
 
 <br />
 <br />

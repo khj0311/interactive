@@ -1,12 +1,12 @@
 .component .tab {
   :is(&--slider) {
     position: relative;
-    height: 500px;
+    height: 550px;
 
     .tab {
       &-list {
         position: absolute;
-        bottom: -100px;
+        top: 510px;
         left: 50%;
         transform: translateX(-50%);
         display: inline-flex;

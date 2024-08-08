@@ -11,13 +11,7 @@
   <!-- Component Area -->
   <div class="component">
     <div class="tab tab--slider">
-      <!-- Tab links -->
       <% if (typeof data.items !== 'undefined' && data.items.length > 0) { %>
-      <ul class="tab-list">
-        <% data.items.forEach(item => { %>
-        <li><button class="tab-item"><%= item.color %></button></li>
-        <% }) %>
-      </ul>
       <!-- Tab content -->
       <div class="tab-content">
         <div class="tab-band band">
@@ -31,6 +25,12 @@
           <img class="tab-screen__img" src="/assets/images/tab/<%- data.imageSrc %>" />
         </div>
       </div>
+      <!-- Tab links -->
+      <ul class="tab-list">
+        <% data.items.forEach(item => { %>
+        <li><button class="tab-item"><%= item.color %></button></li>
+        <% }) %>
+      </ul>
       <% } %>
     </div>
   </div>

@@ -1,12 +1,12 @@
 .component .tab {
   :is(&--effect) {
     position: relative;
-    height: 500px;
+    height: 550px;
 
     .tab {
       &-list {
         position: absolute;
-        bottom: -80px;
+        top: 510px;
         left: 50%;
         padding: 0 15px;
         height: 40px;

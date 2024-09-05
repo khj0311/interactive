@@ -228,16 +228,16 @@
                       <% menu.contents.forEach(subMenu => { %>
                       <% if (typeof subMenu.contents !== 'undefined' && subMenu.contents.length > 0) { %>
                       <li class="sub-menu-title has-child">
-                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
+                        <a href="<%= subMenu.path %>/" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% subMenu.contents.forEach(subMenuItem => { %>
                       <li class="sub-menu-item">
-                        <a href="<%= subMenuItem.path %>/index.html" class="sub-menu-link"><%= subMenuItem.name %></a>
+                        <a href="<%= subMenuItem.path %>/" class="sub-menu-link"><%= subMenuItem.name %></a>
                       </li>
                       <% }) %>
                       <% } else { %>
                       <li class="sub-menu-title">
-                        <a href="<%= subMenu.path %>/index.html" class="sub-menu-link"><%= subMenu.name %></a>
+                        <a href="<%= subMenu.path %>/" class="sub-menu-link"><%= subMenu.name %></a>
                       </li>
                       <% } %>
                       <% }) %>
@@ -248,7 +248,7 @@
             </li>
             <% } else { %>
             <li class="menu-item menu-item__basic">
-              <a href="<%= menu.path %>/index.html" class="menu-link">
+              <a href="<%= menu.path %>/" class="menu-link">
                 <svg class="menu-link__icon">
                   <use xlink:href="/assets/images/icon-sprite.svg#icon-<%= menu.id %>" />
                 </svg>

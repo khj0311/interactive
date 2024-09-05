@@ -187,6 +187,12 @@ function loadData(cb) {
   cb();
 }
 
+function moveAssets(cb) {
+  src('./assets/**/*.*').pipe(dest('./public/assets/'));
+
+  cb();
+}
+
 function cleanProject() {
   return src('./public', { allowEmpty: true, read: false }).pipe(clean({ force: true }));
 }
@@ -203,6 +209,6 @@ exports.default = series(
   parallel(webServer, gulpWatch)
 );
 
-exports.build = series(parallel(cleanProject, loadData), buildData, parallel(buildCommonJS, buildComponentJS, buildCommonCSS, buildComponentCSS), buildHtml);
+exports.build = series(parallel(cleanProject, loadData), moveAssets, buildData, parallel(buildCommonJS, buildComponentJS, buildCommonCSS, buildComponentCSS), buildHtml);
 // exports.default = series(cleanProject, buildHtml);
 // exports.default = series(cleanProject, buildHtml, webServer);

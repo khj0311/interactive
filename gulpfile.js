@@ -202,5 +202,7 @@ exports.default = series(
   buildHtml,
   parallel(webServer, gulpWatch)
 );
+
+exports.build = series(parallel(cleanProject, loadData), buildData, parallel(buildCommonJS, buildComponentJS, buildCommonCSS, buildComponentCSS), buildHtml);
 // exports.default = series(cleanProject, buildHtml);
 // exports.default = series(cleanProject, buildHtml, webServer);
